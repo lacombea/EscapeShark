@@ -34,13 +34,25 @@ class App(tk.Tk):
 		# show a frame for the given page name 
 		frame = self.frames[page_name]
 		frame.tkraise()
-		
 
-class Menu1(tk.Frame):
+class Menu(tk.Frame):
 
 	def __init__(self, parent, controller):
 		tk.Frame.__init__(self, parent)
 		self.controller = controller
+
+		self.list_of_tops = []
+
+	def destroy_all(self):
+		for window in self.list_of_tops :
+			window.destroy()
+
+
+class Menu1(Menu):
+
+	def __init__(self, parent, controller):
+		
+		Menu.__init__(self, parent, controller)
 
 		Label1 = tk.Label(self, text = 'Bienvenue dans Escape Shark !', fg = 'blue')
 		Label1.pack()
@@ -61,11 +73,11 @@ class Menu1(tk.Frame):
 		Bouton2 = tk.Button(cadre, text = 'Quitter', command = lambda : app.quit())
 		Bouton2.pack(side='left')
 
-class Menu2(tk.Frame):
+class Menu2(Menu):
 
 	def __init__(self, parent, controller):
-		tk.Frame.__init__(self, parent)
-		self.controller = controller 
+		
+		Menu.__init__(self, parent, controller)
 
 		Label1 = tk.Label(self, text = 'Qui sommes nous ?', font= (10), fg = 'red')
 		Label1.pack()
@@ -89,11 +101,11 @@ class Menu2(tk.Frame):
 		Bouton1 = tk.Button(self, text = 'Suivant', command = lambda: controller.show_frame("Menu3"))
 		Bouton1.pack()
 
-class Menu3(tk.Frame):
+class Menu3(Menu):
 
 	def __init__(self, parent, controller):
-		tk.Frame.__init__(self, parent)
-		self.controller = controller
+		
+		Menu.__init__(self, parent, controller)
 
 		Label1 = tk.Label(self, text = "Qu'est ce qu'un projet IHH ?", font= (10), fg = 'red')
 		Label1.pack()
@@ -110,11 +122,11 @@ class Menu3(tk.Frame):
 		Bouton1 = tk.Button(self, text = 'Suivant', command = lambda: controller.show_frame("Menu4"))
 		Bouton1.pack()
 
-class Menu4(tk.Frame):
+class Menu4(Menu):
 
 	def __init__(self, parent, controller):
-		tk.Frame.__init__(self, parent)
-		self.controller = controller
+		
+		Menu.__init__(self, parent, controller)
 
 		Label1 = tk.Label(self, text = "Mise en contexte", font= (10), fg = 'red')
 		Label1.pack()
@@ -125,13 +137,11 @@ class Menu4(tk.Frame):
 		Bouton1 = tk.Button(self, text = 'Jouer', command = lambda: controller.show_frame("Menu5"))
 		Bouton1.pack()
 
-class Menu5(tk.Frame):
+class Menu5(Menu):
 
 	def __init__(self, parent, controller):
-		tk.Frame.__init__(self, parent)
-		self.controller = controller
 		
-		self.list_of_tops = []
+		Menu.__init__(self, parent, controller)
 
 		Label1 = tk.Label(self, text = "C'est parti ! \n Décodez ceci pour continuer", font= (10), fg = 'red')
 		Label1.pack()
@@ -187,13 +197,11 @@ class Menu5(tk.Frame):
 			window.destroy()
 
 
-class Menu6(tk.Frame):
+class Menu6(Menu):
 
 	def __init__(self, parent, controller):
-		tk.Frame.__init__(self, parent)
-		self.controller = controller
 		
-		self.list_of_tops = []
+		Menu.__init__(self, parent, controller)
 
 		Label1 = tk.Label(self, text = "C'est parti ! \n Trouvez le code", font= (10), fg = 'red')
 		Label1.pack()
@@ -251,17 +259,12 @@ class Menu6(tk.Frame):
 		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy())
 		Bouton1.pack()
 
-	def destroy_all(self):
-		for window in self.list_of_tops :
-			window.destroy()
 
-
-
-class Menu7(tk.Frame):
+class Menu7(Menu):
 
 	def __init__(self, parent, controller):
-		tk.Frame.__init__(self, parent)
-		self.controller = controller
+
+		Menu.__init__(self, parent, controller)
 
 		Label1 = tk.Label(self, text = "BRAVO!", font= (10), fg = 'red')
 		Label1.pack()
