@@ -15,20 +15,21 @@ class App(tk.Tk):
 		# will be raised above the others
 		container = tk.Frame(self)
 
-		container.pack(side="top", fill="both", expand=True)
-		container.grid_rowconfigure(0, weight=1)
-		container.grid_columnconfigure(0, weight=1)
+		container.grid()
+		container.grid_rowconfigure(2, weight=1)
+		container.grid_columnconfigure(2, weight=1)
 
 		self.frames = {}
 		pages = (Menu1, Menu2, Menu3, Menu4, Menu5, Menu6, Menu7)
 		for F in pages:
 			page_name = F.__name__
 			frame = F(parent=container, controller=self)
+			frame.config(bg = 'red')
 			self.frames[page_name] = frame
 			# put all of the pages in the same location;
 			# the one on the top of the stacking order
 			# will be the one that is visible.
-			frame.grid(row=0, column=0, sticky="ew")
+			frame.grid(row=0, column=0, sticky="ns")
 
 		self.show_frame("Menu1")
 
@@ -43,9 +44,10 @@ class Menu1(tk.Frame):
 	def __init__(self, parent, controller):
 		tk.Frame.__init__(self, parent)
 		self.controller = controller
+		tk.Frame.config(self)
 
 		Label1 = tk.Label(self, text = 'Bienvenue dans Escape Shark !', fg = 'blue')
-		Label1.grid(row=1)
+		Label1.grid(row=1, columnspan = 2)
 		logo = tk.PhotoImage(file='logo.png')
 		Label2 = tk.Label(self, image = logo)
 		Label2.image = logo
@@ -57,9 +59,9 @@ class Menu1(tk.Frame):
 		Label4.grid(row=4,columnspan=2)
 
 		Bouton1 = tk.Button(self, text = 'En avant', command = lambda: controller.show_frame("Menu2"))
-		Bouton1.grid(row=5)
+		Bouton1.grid(row=5, column = 0)
 		Bouton2 = tk.Button(self, text = 'Quitter', command = lambda : app.quit())
-		Bouton2.grid(row=6)
+		Bouton2.grid(row=5, column = 1)
 
 class Menu2(tk.Frame):
 
@@ -104,7 +106,7 @@ class Menu3(tk.Frame):
 		Label3 = tk.Label(self, text = "Pourquoi ce projet ?", font= (10), fg = 'red')
 		Label3.grid(row=3,columnspan=2)
 
-		Label4 = tk.Label(self, text = "Lors de la bourse aux projets IHH du 8 Octobre 2020, nous avons rencontré Emma DARBOIS, élève ingénieure en quatrième année. \n Suite auconfinement de Mars 2020, les projets IHH de l’année passée n’avaient pas pu être réalisés, d’où la mise en place de cette bourse, \n  afin que les projets inachevés puissent voir le jour. \n Le projet d’Emma était de mettre en place un Escape Game sur le thème des requins afin de démystifier leur mauvaise image auprès de la population.\n Après avoir échangé avec elle, nous avons décidé de reprendre son projet car ce dernier nous plaisait beaucoup \net que nous avons été particulièrement touchés par la passion d’Emma pour les requins")
+		Label4 = tk.Label(self, wraplength = 300, text = "Lors de la bourse aux projets IHH du 8 Octobre 2020, nous avons rencontré Emma DARBOIS, élève ingénieure en quatrième année. \n Suite auconfinement de Mars 2020, les projets IHH de l’année passée n’avaient pas pu être réalisés, d’où la mise en place de cette bourse, \n  afin que les projets inachevés puissent voir le jour. \n Le projet d’Emma était de mettre en place un Escape Game sur le thème des requins afin de démystifier leur mauvaise image auprès de la population.\n Après avoir échangé avec elle, nous avons décidé de reprendre son projet car ce dernier nous plaisait beaucoup \net que nous avons été particulièrement touchés par la passion d’Emma pour les requins")
 		Label4.grid(row=4,columnspan=2)
 
 		Bouton1 = tk.Button(self, text = 'Suivant', command = lambda: controller.show_frame("Menu4"))
