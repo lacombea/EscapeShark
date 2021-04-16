@@ -167,6 +167,7 @@ class Menu5(Menu):
 			controller.show_frame("Menu6")
 		else :
 			self.wrong()
+			self.Saisie.delete(0,40)
 
 	def alphabet(self):
 		self.popup = tk.Toplevel(self)
@@ -189,7 +190,7 @@ class Menu5(Menu):
 		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red')
 		Label1.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy())
+		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy())
 		Bouton1.pack()
 
 	def requin_blanc(self):
@@ -250,6 +251,7 @@ class Menu6(Menu):
 			controller.show_frame("Menu7")
 		else :
 			self.wrong()
+			self.Saisie.delete(0,40)
 
 	def indice(self, n):
 		self.destroy_all()
@@ -276,7 +278,7 @@ class Menu6(Menu):
 		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red')
 		Label1.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy())
+		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy())
 		Bouton1.pack()
 
 	def squale(self):
@@ -319,6 +321,7 @@ class Menu7(Menu):
 			controller.show_frame("Menu8")
 		else :
 			self.wrong()
+			self.Saisie.delete(0,40)
 
 	def wrong(self):
 		self.destroy_all()
@@ -329,7 +332,7 @@ class Menu7(Menu):
 		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red')
 		Label1.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy())
+		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy())
 		Bouton1.pack()
 
 class Menu8(Menu):
