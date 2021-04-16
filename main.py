@@ -201,7 +201,13 @@ class Menu5(Menu):
 		Label1.image = alpha
 		Label1.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy())
+		Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n", font= (10))
+		Label2.pack()
+
+		Label3 = tk.Label(self.popup, text = " Rendu célèbre grâce aux Dents de la Mer de Spielberg, le requin blanc est l'une des espèces les plus imposantes de requins.\nLe dos gris et le ventre blanc, il peut atteindre jusqu'à 5m de longueur à l'âge adulte, et peut vivre pendant 40 ans ! ")
+		Label3.pack()
+
+		Bouton1 = tk.Button(self.popup, text = 'Suivant', command = lambda : self.popup.destroy())
 		Bouton1.pack()
 
 
@@ -234,16 +240,13 @@ class Menu6(Menu):
 		Bouton4.pack(side = 'left')
 		Bouton5 = tk.Button(cadre1, text = 'Indice 5', command = lambda : self.indice(4))
 		Bouton5.pack(side = 'left')
-<<<<<<< HEAD
-
-=======
->>>>>>> b42908e7c9e5d75aeafcae43f61e3cb42b60d544
 
 
 	def test(self, controller):
 
 		if self.Saisie.get() == 'squale':
 			self.destroy_all()
+			self.squale()
 			controller.show_frame("Menu7")
 		else :
 			self.wrong()
@@ -274,6 +277,24 @@ class Menu6(Menu):
 		Label1.pack()
 
 		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy())
+		Bouton1.pack()
+
+	def squale(self):
+		self.popup = tk.Toplevel(self)
+		self.list_of_tops.append(self.popup)
+
+		alpha = tk.PhotoImage(file='squale.png')
+		Label1 = tk.Label(self.popup, image = alpha)
+		Label1.image = alpha
+		Label1.pack()
+
+		Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n", font= (10))
+		Label2.pack()
+
+		Label3 = tk.Label(self.popup, text = "Le mot Squale est un terme qui englobe l'ensemble des espèces de requins avec des caractéristiques communes,\n comme la dentition, la texture de la peau ou la silhouette fuselée. ")
+		Label3.pack()
+
+		Bouton1 = tk.Button(self.popup, text = 'Suivant', command = lambda : self.popup.destroy())
 		Bouton1.pack()
 
 
