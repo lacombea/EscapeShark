@@ -161,7 +161,6 @@ class Menu5(Menu):
 
 
 	def test(self, controller):
-
 		if self.Saisie.get() == 'requin blanc':
 			self.destroy_all()
 			self.requin_blanc()
@@ -235,7 +234,10 @@ class Menu6(Menu):
 		Bouton4.pack(side = 'left')
 		Bouton5 = tk.Button(cadre1, text = 'Indice 5', command = lambda : self.indice(4))
 		Bouton5.pack(side = 'left')
+<<<<<<< HEAD
 
+=======
+>>>>>>> b42908e7c9e5d75aeafcae43f61e3cb42b60d544
 
 
 	def test(self, controller):
