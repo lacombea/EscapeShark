@@ -164,6 +164,7 @@ class Menu5(Menu):
 
 		if self.Saisie.get() == 'requin blanc':
 			self.destroy_all()
+			self.requin_blanc()
 			controller.show_frame("Menu6")
 		else :
 			self.wrong()
@@ -192,9 +193,17 @@ class Menu5(Menu):
 		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy())
 		Bouton1.pack()
 
-	def destroy_all(self):
-		for window in self.list_of_tops :
-			window.destroy()
+	def requin_blanc(self):
+		self.popup = tk.Toplevel(self)
+		self.list_of_tops.append(self.popup)
+
+		alpha = tk.PhotoImage(file='requinblanc.png')
+		Label1 = tk.Label(self.popup, image = alpha)
+		Label1.image = alpha
+		Label1.pack()
+
+		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy())
+		Bouton1.pack()
 
 
 class Menu6(Menu):
@@ -208,19 +217,25 @@ class Menu6(Menu):
 
 		self.Saisie = tk.Entry(self, textvariable="bl")
 		self.Saisie.pack()
-		Bouton1  = tk.Button(self, text = 'valider', command = lambda : self.test(controller))
-		Bouton1.pack()
+		Bouton0  = tk.Button(self, text = 'valider', command = lambda : self.test(controller))
+		Bouton0.pack()
 
-		Bouton1 = tk.Button(self, text = 'Indice 1', command = lambda : self.indice(0))
-		Bouton1.pack()
-		Bouton2 = tk.Button(self, text = 'Indice 2', command = lambda : self.indice(1))
-		Bouton2.pack()
-		Bouton3 = tk.Button(self, text = 'Indice 3', command = lambda : self.indice(2))
-		Bouton3.pack()
-		Bouton4 = tk.Button(self, text = 'Indice 4', command = lambda : self.indice(3))
-		Bouton4.pack()
-		Bouton5 = tk.Button(self, text = 'Indice 5', command = lambda : self.indice(4))
-		Bouton5.pack()
+		cadre0=tk.Frame(self)
+		cadre0.pack()
+		Bouton1 = tk.Button(cadre0, text = 'Indice 1', command = lambda : self.indice(0))
+		Bouton1.pack(side = 'left')
+		Bouton2 = tk.Button(cadre0, text = 'Indice 2', command = lambda : self.indice(1))
+		Bouton2.pack(side = 'left')
+		Bouton3 = tk.Button(cadre0, text = 'Indice 3', command = lambda : self.indice(2))
+		Bouton3.pack(side = 'left')
+
+		cadre1=tk.Frame(self)
+		cadre1.pack()
+		Bouton4 = tk.Button(cadre1, text = 'Indice 4', command = lambda : self.indice(3))
+		Bouton4.pack(side = 'left')
+		Bouton5 = tk.Button(cadre1, text = 'Indice 5', command = lambda : self.indice(4))
+		Bouton5.pack(side = 'left')
+
 
 
 	def test(self, controller):
