@@ -5,6 +5,8 @@ import os, sys
 import tkinter as tk 
 from PIL import Image, ImageTk
 
+import time
+
 class App(tk.Tk):
 	def __init__(self):
 		tk.Tk.__init__(self)
@@ -34,6 +36,20 @@ class App(tk.Tk):
 		# show a frame for the given page name 
 		frame = self.frames[page_name]
 		frame.tkraise()
+
+class Timer:
+	def __init__(self):
+		self.start = time.time()
+		print("start init", self.start)
+
+	def get_time(self):
+		end = time.time()
+		print("end" , end)
+		print("start", self.start)
+		m, s = divmod(end - self.start, 60)
+		h, m = divmod(m, 60)
+		time_str = "%02d:%02d:%02d" % (h, m, s)
+		return time_str
 
 class Menu(tk.Frame):
 
@@ -134,8 +150,12 @@ class Menu4(Menu):
 		Label2 = tk.Label(self, text = "Les joueurs incarnent une équipe de recherche scientifique sur la faune marine. \n Lors d’une excursion à bord du bateau d’un vieux pêcheur, ils découvrent une brèche dans la coque du navire \n qui leur fait supposer une attaque de requins, le capitaine a disparu et les voilà enfermés dans la cale ! \n Ils ont une heure pour remonter jusqu’à la cabine du capitaine en passant par la salle des machines \n et envoyer un message de secours via la radio.")
 		Label2.pack()
 
-		Bouton1 = tk.Button(self, text = 'Jouer', command = lambda: controller.show_frame("Menu5"))
+		Bouton1 = tk.Button(self, text = 'Jouer', command = lambda: self.debut_jeu(controller))
 		Bouton1.pack()
+
+	def debut_jeu(self, controller):
+		Timer.__init__(App)
+		controller.show_frame("Menu5")
 
 class Menu5(Menu):
 
@@ -308,20 +328,79 @@ class Menu7(Menu):
 		Label1 = tk.Label(self, text = "C'est parti ! \n Classez ces espèces par niveau de dangerosité", font= (10), fg = 'red')
 		Label1.pack()
 
-		self.Saisie = tk.Entry(self, textvariable="b")
-		self.Saisie.pack()
+		cadre0=tk.Frame(self)
+		cadre0.pack()
+		Label1 = tk.Label(cadre0, text = "éléphant")
+		Label1.pack(side = 'left')
+		Label2 = tk.Label(cadre0, text = "chien")
+		Label2.pack(side = 'left')
+		Label3 = tk.Label(cadre0, text = "requin")
+		Label3.pack(side = 'left')
+		Label4 = tk.Label(cadre0, text = "hippopotame")
+		Label4.pack(side = 'left')
+		Label5 = tk.Label(cadre0, text = "serpent")
+		Label5.pack(side = 'left')
+
+		cadre1=tk.Frame(self)
+		cadre1.pack()
+		self.Saisie1 = tk.Entry(cadre1, textvariable="1")
+		self.Saisie1.pack(side = 'left')
+		self.Saisie2 = tk.Entry(cadre1, textvariable="2")
+		self.Saisie2.pack(side = 'left')
+		self.Saisie3 = tk.Entry(cadre1, textvariable="3")
+		self.Saisie3.pack(side = 'left')
+		self.Saisie4 = tk.Entry(cadre1, textvariable="4")
+		self.Saisie4.pack(side = 'left')
+		self.Saisie5 = tk.Entry(cadre1, textvariable="5")
+		self.Saisie5.pack(side = 'left')
 		
+		Label1 = tk.Label(self, text = "+ dangereux <------                 ------> - dangereux")
+		Label1.pack()
+		Label2 = tk.Label(self, text = "NB : il faut entrer le nom des animaux dans les différentes cases")
+		Label2.pack()
+
 		Bouton0  = tk.Button(self, text = 'valider', command = lambda : self.test(controller))
 		Bouton0.pack()
 
 	def test(self, controller):
 
-		if self.Saisie.get() == 'danger':
+		if self.Saisie1.get() == 'serpent':
+			self.Saisie1.configure(state = 'disabled')	
+		else :
+			self.wrong()
+			self.Saisie1.delete(0,40)
+		
+		if self.Saisie2.get() == 'chien':
+			self.Saisie2.configure(state = 'disabled')	
+		else :
+			self.wrong()
+			self.Saisie2.delete(0,40)
+
+		if self.Saisie3.get() == 'hippopotame':
+			self.Saisie3.configure(state = 'disabled')	
+		else :
+			self.wrong()
+			self.Saisie3.delete(0,40)
+
+		if self.Saisie4.get() == 'éléphant':
+			self.Saisie4.configure(state = 'disabled')	
+		else :
+			self.wrong()
+			self.Saisie4.delete(0,40)
+
+		if self.Saisie5.get() == 'requin':
+			self.Saisie5.configure(state = 'disabled')	
+		else :
+			self.wrong()
+			self.Saisie5.delete(0,40)	
+
+		if (self.Saisie1.get() == 'serpent' and self.Saisie2.get() == 'chien' and self.Saisie3.get() == 'hippopotame' and self.Saisie4.get() == 'éléphant' and self.Saisie5.get() == 'requin'):
 			self.destroy_all()
+			Timer.time = Timer.get_time(App)
 			controller.show_frame("Menu8")
 		else :
 			self.wrong()
-			self.Saisie.delete(0,40)
+			self.Saisie1.delete(0,40)
 
 	def wrong(self):
 		self.destroy_all()
@@ -347,9 +426,20 @@ class Menu8(Menu):
 		Label2 = tk.Label(self, text = "Vous avez terminé le jeu dans le temps imparti", font= (10), fg = 'red')
 		Label2.pack()
 
+		Label3 = tk.Label(self, text = "Votre temps :", font= (10), fg = 'black')
+		Label3.pack()
 
-		Bouton1 = tk.Button(self, text = 'Quitter', command = lambda : app.quit())
+		self.Label4 = tk.Label(self, text = "suspence.....", font= (10), fg = 'black')
+		self.Label4.pack()
+
+		Bouton1 = tk.Button(self, text = 'Afficher score', command = lambda : self.afficher_score())
 		Bouton1.pack()
+
+		Bouton2 = tk.Button(self, text = 'Quitter', command = lambda : app.quit())
+		Bouton2.pack()
+
+	def afficher_score(self):
+		self.Label4.configure(text=Timer.time) 
 
 
 if __name__ == "__main__":
