@@ -161,7 +161,6 @@ class Menu5(Menu):
 
 
 	def test(self, controller):
-
 		if self.Saisie.get() == 'requin blanc':
 			self.destroy_all()
 			controller.show_frame("Menu6")
@@ -208,19 +207,24 @@ class Menu6(Menu):
 
 		self.Saisie = tk.Entry(self, textvariable="bl")
 		self.Saisie.pack()
-		Bouton1  = tk.Button(self, text = 'valider', command = lambda : self.test(controller))
-		Bouton1.pack()
+		Bouton0  = tk.Button(self, text = 'valider', command = lambda : self.test(controller))
+		Bouton0.pack()
 
-		Bouton1 = tk.Button(self, text = 'Indice 1', command = lambda : self.indice(0))
-		Bouton1.pack()
-		Bouton2 = tk.Button(self, text = 'Indice 2', command = lambda : self.indice(1))
-		Bouton2.pack()
-		Bouton3 = tk.Button(self, text = 'Indice 3', command = lambda : self.indice(2))
-		Bouton3.pack()
-		Bouton4 = tk.Button(self, text = 'Indice 4', command = lambda : self.indice(3))
-		Bouton4.pack()
-		Bouton5 = tk.Button(self, text = 'Indice 5', command = lambda : self.indice(4))
-		Bouton5.pack()
+		cadre0=tk.Frame(self)
+		cadre0.pack()
+		Bouton1 = tk.Button(cadre0, text = 'Indice 1', command = lambda : self.indice(0))
+		Bouton1.pack(side = 'left')
+		Bouton2 = tk.Button(cadre0, text = 'Indice 2', command = lambda : self.indice(1))
+		Bouton2.pack(side = 'left')
+		Bouton3 = tk.Button(cadre0, text = 'Indice 3', command = lambda : self.indice(2))
+		Bouton3.pack(side = 'left')
+
+		cadre1=tk.Frame(self)
+		cadre1.pack()
+		Bouton4 = tk.Button(cadre1, text = 'Indice 4', command = lambda : self.indice(3))
+		Bouton4.pack(side = 'left')
+		Bouton5 = tk.Button(cadre1, text = 'Indice 5', command = lambda : self.indice(4))
+		Bouton5.pack(side = 'left')
 
 
 	def test(self, controller):
