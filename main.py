@@ -18,7 +18,7 @@ class App(tk.Tk):
 		container.grid_columnconfigure(2, weight=1)
 
 		self.frames = {}
-		pages = (Menu1, Menu2, Menu3, Menu4, Menu5, Menu6, Menu7)
+		pages = (Menu1, Menu2, Menu3, Menu4, Menu5, Menu6, Menu7, Menu8)
 		for F in pages:
 			page_name = F.__name__
 			frame = F(parent=container, controller=self)
@@ -297,8 +297,42 @@ class Menu6(Menu):
 		Bouton1 = tk.Button(self.popup, text = 'Suivant', command = lambda : self.popup.destroy())
 		Bouton1.pack()
 
-
 class Menu7(Menu):
+
+	def __init__(self, parent, controller):
+		
+		Menu.__init__(self, parent, controller)
+
+		Label1 = tk.Label(self, text = "C'est parti ! \n Classez ces espèces par niveau de dangerosité", font= (10), fg = 'red')
+		Label1.pack()
+
+		self.Saisie = tk.Entry(self, textvariable="b")
+		self.Saisie.pack()
+		
+		Bouton0  = tk.Button(self, text = 'valider', command = lambda : self.test(controller))
+		Bouton0.pack()
+
+	def test(self, controller):
+
+		if self.Saisie.get() == 'danger':
+			self.destroy_all()
+			controller.show_frame("Menu8")
+		else :
+			self.wrong()
+
+	def wrong(self):
+		self.destroy_all()
+		
+		self.popup = tk.Toplevel(self)
+		self.list_of_tops.append(self.popup)
+
+		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red')
+		Label1.pack()
+
+		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy())
+		Bouton1.pack()
+
+class Menu8(Menu):
 
 	def __init__(self, parent, controller):
 
