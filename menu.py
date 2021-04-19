@@ -23,7 +23,7 @@ class Menu1(Page):
         Label4 = tk.Label(self, text = 'LACOMBE Alexia et MARY Baptiste')
         Label4.pack()
 
-        Bouton1 = tk.Button(self, text = 'En avant', command = lambda: controller.show_frame("Menu2"), bg = '#00d0cb')
+        Bouton1 = tk.Button(self, text = 'En avant', command = lambda: controller.show_frame("Menu2"), bg = '#00d0cb', activebackground = '#00d0cb')
         Bouton1.pack()
 
 class Menu2(Page):
@@ -51,7 +51,7 @@ class Menu2(Page):
 		Label5 = tk.Label(self, text = 'Je me nomme Baptiste MARY. Passionné par la voile et le surf depuis toujours, \n  j’ai également voyagé à plusieurs reprises et ai effectué du Snorkeling. \n J’ai appris à aimer la faune et la flore marine lors de ces activités.')
 		Label5.pack()
 
-		Bouton1 = tk.Button(self, text = 'Suivant', command = lambda: controller.show_frame("Menu3"))
+		Bouton1 = tk.Button(self, text = 'Suivant', command = lambda: controller.show_frame("Menu3"), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 class Menu3(Page):
@@ -72,7 +72,7 @@ class Menu3(Page):
 		Label4 = tk.Label(self, text = "Lors de la bourse aux projets IHH du 8 Octobre 2020, nous avons rencontré Emma DARBOIS, élève ingénieure en quatrième année. \n Suite auconfinement de Mars 2020, les projets IHH de l’année passée n’avaient pas pu être réalisés, d’où la mise en place de cette bourse, \n  afin que les projets inachevés puissent voir le jour. \n Le projet d’Emma était de mettre en place un Escape Game sur le thème des requins afin de démystifier leur mauvaise image auprès de la population.\n Après avoir échangé avec elle, nous avons décidé de reprendre son projet car ce dernier nous plaisait beaucoup \net que nous avons été particulièrement touchés par la passion d’Emma pour les requins")
 		Label4.pack()
 
-		Bouton1 = tk.Button(self, text = 'Suivant', command = lambda: controller.show_frame("Menu4"))
+		Bouton1 = tk.Button(self, text = 'Suivant', command = lambda: controller.show_frame("Menu4"), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 class Menu4(Page):
@@ -87,7 +87,7 @@ class Menu4(Page):
 		Label2 = tk.Label(self, text = "Les joueurs incarnent une équipe de recherche scientifique sur la faune marine. \n Lors d’une excursion à bord du bateau d’un vieux pêcheur, ils découvrent une brèche dans la coque du navire \n qui leur fait supposer une attaque de requins, le capitaine a disparu et les voilà enfermés dans la cale ! \n Ils ont une heure pour remonter jusqu’à la cabine du capitaine en passant par la salle des machines \n et envoyer un message de secours via la radio.")
 		Label2.pack()
 
-		Bouton1 = tk.Button(self, text = 'Jouer', command = lambda: self.debut_jeu(controller))
+		Bouton1 = tk.Button(self, text = 'Jouer', command = lambda: self.debut_jeu(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 	def debut_jeu(self, controller):
@@ -112,7 +112,7 @@ class MenuFinal(Page):
 		self.Label4 = tk.Label(self, text = "suspence.....", font= (10), fg = 'black')
 		self.Label4.pack()
 
-		Bouton1 = tk.Button(self, text = 'Afficher score', command = lambda : self.afficher_score())
+		Bouton1 = tk.Button(self, text = 'Afficher score', command = lambda : self.afficher_score(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 	def afficher_score(self):

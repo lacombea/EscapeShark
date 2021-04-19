@@ -19,12 +19,12 @@ class Enigme1(Page):
 		Label2.image = code
 		Label2.pack()
 
-		Bouton1  = tk.Button(self, text = 'alphabet', command = lambda : self.alphabet())
+		Bouton1  = tk.Button(self, text = 'alphabet', command = lambda : self.alphabet(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 		self.Saisie = tk.Entry(self, textvariable="bla")
 		self.Saisie.pack()
-		Bouton2  = tk.Button(self, text = 'valider', command = lambda : self.test(controller))
+		Bouton2  = tk.Button(self, text = 'valider', command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton2.pack()
 
 
@@ -47,7 +47,7 @@ class Enigme1(Page):
 		Label1.image = alpha
 		Label1.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy())
+		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 	def wrong(self):
@@ -60,7 +60,7 @@ class Enigme1(Page):
 		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red',bg = '#717171')
 		Label1.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy())
+		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 	def requin_blanc(self):
@@ -79,7 +79,7 @@ class Enigme1(Page):
 		Label3 = tk.Label(self.popup, text = " Rendu célèbre grâce aux Dents de la Mer de Spielberg, le requin blanc est l'une des espèces les plus imposantes de requins.\nLe dos gris et le ventre blanc, il peut atteindre jusqu'à 5m de longueur à l'âge adulte, et peut vivre pendant 40 ans ! ",bg = '#717171')
 		Label3.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Suivant', command = lambda : self.popup.destroy())
+		Bouton1 = tk.Button(self.popup, text = 'Suivant', command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 
@@ -94,23 +94,23 @@ class Enigme2(Page):
 
 		self.Saisie = tk.Entry(self, textvariable="bl")
 		self.Saisie.pack()
-		Bouton0  = tk.Button(self, text = 'valider', command = lambda : self.test(controller))
+		Bouton0  = tk.Button(self, text = 'valider', command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton0.pack()
 
 		cadre0=tk.Frame(self)
 		cadre0.pack()
-		Bouton1 = tk.Button(cadre0, text = 'Indice 1', command = lambda : self.indice(0))
+		Bouton1 = tk.Button(cadre0, text = 'Indice 1', command = lambda : self.indice(0), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack(side = 'left')
-		Bouton2 = tk.Button(cadre0, text = 'Indice 2', command = lambda : self.indice(1))
+		Bouton2 = tk.Button(cadre0, text = 'Indice 2', command = lambda : self.indice(1), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton2.pack(side = 'left')
-		Bouton3 = tk.Button(cadre0, text = 'Indice 3', command = lambda : self.indice(2))
+		Bouton3 = tk.Button(cadre0, text = 'Indice 3', command = lambda : self.indice(2), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton3.pack(side = 'left')
 
 		cadre1=tk.Frame(self)
 		cadre1.pack()
-		Bouton4 = tk.Button(cadre1, text = 'Indice 4', command = lambda : self.indice(3))
+		Bouton4 = tk.Button(cadre1, text = 'Indice 4', command = lambda : self.indice(3), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton4.pack(side = 'left')
-		Bouton5 = tk.Button(cadre1, text = 'Indice 5', command = lambda : self.indice(4))
+		Bouton5 = tk.Button(cadre1, text = 'Indice 5', command = lambda : self.indice(4), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton5.pack(side = 'left')
 
 
@@ -138,7 +138,7 @@ class Enigme2(Page):
 		Label1.image = indicen
 		Label1.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy())
+		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 	def wrong(self):
@@ -151,7 +151,7 @@ class Enigme2(Page):
 		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red',bg = '#717171')
 		Label1.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy())
+		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 	def squale(self):
@@ -170,7 +170,7 @@ class Enigme2(Page):
 		Label3 = tk.Label(self.popup, text = "Le mot Squale est un terme qui englobe l'ensemble des espèces de requins avec des caractéristiques communes,\n comme la dentition, la texture de la peau ou la silhouette fuselée. ",bg = '#717171')
 		Label3.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Suivant', command = lambda : self.popup.destroy())
+		Bouton1 = tk.Button(self.popup, text = 'Suivant', command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 class Enigme3(Page):
@@ -213,7 +213,7 @@ class Enigme3(Page):
 		Label2 = tk.Label(self, text = "NB : il faut entrer le nom des animaux dans les différentes cases")
 		Label2.pack()
 
-		Bouton0  = tk.Button(self, text = 'valider', command = lambda : self.test(controller))
+		Bouton0  = tk.Button(self, text = 'valider', command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton0.pack()
 
 	def test(self, controller):
@@ -267,7 +267,7 @@ class Enigme3(Page):
 		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red',bg = '#717171')
 		Label1.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy())
+		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 	def danger(self):
@@ -294,5 +294,5 @@ class Enigme3(Page):
 		Label7 = tk.Label(self.popup, text = "Et la dernière place revient à notre espèce favorite : les requins, avec seulement une dizaine de morts par an.\nCela vous surprend? Les requins sont énormément diabolisés dans les films et médias, alors que statistiquement il sont moins dangereux que votre animal de compagnie.",bg = '#717171')
 		Label7.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Suivant', command = lambda : self.popup.destroy())
+		Bouton1 = tk.Button(self.popup, text = 'Suivant', command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
