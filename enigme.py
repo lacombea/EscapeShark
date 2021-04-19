@@ -11,7 +11,7 @@ class Enigme1(Page):
 		
 		Page.__init__(self, parent, controller)
 
-		Label1 = tk.Label(self, text = "C'est parti ! \n Décodez ceci pour continuer", font= (10), fg = 'red')
+		Label1 = tk.Label(self, text = "C'est parti ! \n Décodez ceci pour continuer",  font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
 		code = tk.PhotoImage(file='codemorse.png')
@@ -19,12 +19,12 @@ class Enigme1(Page):
 		Label2.image = code
 		Label2.pack()
 
-		Bouton1  = tk.Button(self, text = 'alphabet', command = lambda : self.alphabet(), bg = '#00d0cb', activebackground = '#00d0cb')
+		Bouton1  = tk.Button(self, text = 'alphabet',font= ("Courier",10), command = lambda : self.alphabet(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 		self.Saisie = tk.Entry(self, textvariable="bla")
 		self.Saisie.pack()
-		Bouton2  = tk.Button(self, text = 'valider', command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
+		Bouton2  = tk.Button(self, text = 'valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton2.pack()
 
 
@@ -47,7 +47,7 @@ class Enigme1(Page):
 		Label1.image = alpha
 		Label1.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Quitter', command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
+		Bouton1 = tk.Button(self.popup, text = 'Quitter',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 	def wrong(self):
@@ -57,10 +57,10 @@ class Enigme1(Page):
 		self.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red',bg = '#717171')
+		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'white',bg = '#717171')
 		Label1.pack()
 
-		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
+		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 	def requin_blanc(self):
