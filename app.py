@@ -26,7 +26,6 @@ class App(tk.Tk):
             # the one on the top of the stacking order
             # will be the one that is visible.
             frame.grid(row=0, column=0, sticky="nsew")
-            #frame.configure(background = '#00d0cb')
             
         self.show_frame("Menu1")
             
