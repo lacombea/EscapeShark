@@ -40,6 +40,7 @@ class Enigme1(Page):
 	def alphabet(self):
 		self.popup = tk.Toplevel(self)
 		self.list_of_tops.append(self.popup)
+		self.popup.configure(bg = '#717171')
 
 		alpha = tk.PhotoImage(file='alphamorse.png')
 		Label1 = tk.Label(self.popup, image = alpha)
@@ -54,8 +55,9 @@ class Enigme1(Page):
 		
 		self.popup = tk.Toplevel(self)
 		self.list_of_tops.append(self.popup)
+		self.popup.configure(bg = '#717171')
 
-		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red')
+		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red',bg = '#717171')
 		Label1.pack()
 
 		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy())
@@ -64,16 +66,17 @@ class Enigme1(Page):
 	def requin_blanc(self):
 		self.popup = tk.Toplevel(self)
 		self.list_of_tops.append(self.popup)
+		self.popup.configure(bg = '#717171')
 
 		alpha = tk.PhotoImage(file='requinblanc.png')
 		Label1 = tk.Label(self.popup, image = alpha)
 		Label1.image = alpha
 		Label1.pack()
 
-		Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n", font= (10))
+		Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n", font= (10),bg = '#717171')
 		Label2.pack()
 
-		Label3 = tk.Label(self.popup, text = " Rendu célèbre grâce aux Dents de la Mer de Spielberg, le requin blanc est l'une des espèces les plus imposantes de requins.\nLe dos gris et le ventre blanc, il peut atteindre jusqu'à 5m de longueur à l'âge adulte, et peut vivre pendant 40 ans ! ")
+		Label3 = tk.Label(self.popup, text = " Rendu célèbre grâce aux Dents de la Mer de Spielberg, le requin blanc est l'une des espèces les plus imposantes de requins.\nLe dos gris et le ventre blanc, il peut atteindre jusqu'à 5m de longueur à l'âge adulte, et peut vivre pendant 40 ans ! ",bg = '#717171')
 		Label3.pack()
 
 		Bouton1 = tk.Button(self.popup, text = 'Suivant', command = lambda : self.popup.destroy())
@@ -126,6 +129,7 @@ class Enigme2(Page):
 
 		self.popup = tk.Toplevel(self)
 		self.list_of_tops.append(self.popup)
+		self.popup.configure(bg = '#717171')
 
 		indice = ['affiche1.png', 'affiche2.png', 'affiche3.png', 'affiche4.png', 'affiche5.png']
 
@@ -142,8 +146,9 @@ class Enigme2(Page):
 		
 		self.popup = tk.Toplevel(self)
 		self.list_of_tops.append(self.popup)
+		self.popup.configure(bg = '#717171')
 
-		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red')
+		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red',bg = '#717171')
 		Label1.pack()
 
 		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy())
@@ -152,16 +157,17 @@ class Enigme2(Page):
 	def squale(self):
 		self.popup = tk.Toplevel(self)
 		self.list_of_tops.append(self.popup)
+		self.popup.configure(bg = '#717171')
 
 		alpha = tk.PhotoImage(file='squale.png')
 		Label1 = tk.Label(self.popup, image = alpha)
 		Label1.image = alpha
 		Label1.pack()
 
-		Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n", font= (10))
+		Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n", font= (10),bg = '#717171')
 		Label2.pack()
 
-		Label3 = tk.Label(self.popup, text = "Le mot Squale est un terme qui englobe l'ensemble des espèces de requins avec des caractéristiques communes,\n comme la dentition, la texture de la peau ou la silhouette fuselée. ")
+		Label3 = tk.Label(self.popup, text = "Le mot Squale est un terme qui englobe l'ensemble des espèces de requins avec des caractéristiques communes,\n comme la dentition, la texture de la peau ou la silhouette fuselée. ",bg = '#717171')
 		Label3.pack()
 
 		Bouton1 = tk.Button(self.popup, text = 'Suivant', command = lambda : self.popup.destroy())
@@ -256,8 +262,9 @@ class Enigme3(Page):
 		
 		self.popup = tk.Toplevel(self)
 		self.list_of_tops.append(self.popup)
+		self.popup.configure(bg = '#717171')
 
-		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red')
+		Label1 = tk.Label(self.popup, text = "Réessayer", font= (10), fg = 'red',bg = '#717171')
 		Label1.pack()
 
 		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie', command = lambda : self.popup.destroy())
@@ -266,24 +273,25 @@ class Enigme3(Page):
 	def danger(self):
 		self.popup = tk.Toplevel(self)
 		self.list_of_tops.append(self.popup)
+		self.popup.configure(bg = '#717171')
 
 		alpha = tk.PhotoImage(file='danger.png')
 		Label1 = tk.Label(self.popup, image = alpha)
 		Label1.image = alpha
 		Label1.pack()
 
-		Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé le bon ordre ! \n\n Le saviez-vous ? \n", font= (10))
+		Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé le bon ordre ! \n\n Le saviez-vous ? \n", font= (10),bg = '#717171')
 		Label2.pack()
 
-		Label3 = tk.Label(self.popup, text = "Dans notre classement, la première place est occupée par le serpent avec 40.000 morts par an.")
+		Label3 = tk.Label(self.popup, text = "Dans notre classement, la première place est occupée par le serpent avec 40.000 morts par an.",bg = '#717171')
 		Label3.pack()
-		Label4 = tk.Label(self.popup, text = "La seconde place revient au meilleur ami de l'homme, avec 25.000 maîtres tués.")
+		Label4 = tk.Label(self.popup, text = "La seconde place revient au meilleur ami de l'homme, avec 25.000 maîtres tués.",bg = '#717171')
 		Label4.pack()
-		Label5 = tk.Label(self.popup, text = "Vient ensuite l'hippopotame, avec 500 morts par an.")
+		Label5 = tk.Label(self.popup, text = "Vient ensuite l'hippopotame, avec 500 morts par an.",bg = '#717171')
 		Label5.pack()
-		Label6 = tk.Label(self.popup, text = "en quatrième place, nous avons l'éléphant avec 100 morts par an.")
+		Label6 = tk.Label(self.popup, text = "en quatrième place, nous avons l'éléphant avec 100 morts par an.",bg = '#717171')
 		Label6.pack()
-		Label7 = tk.Label(self.popup, text = "Et la dernière place revient à notre espèce favorite : les requins, avec seulement une dizaine de morts par an.\nCela vous surprend? Les requins sont énormément diabolisés dans les films et médias, alors que statistiquement il sont moins dangereux que votre animal de compagnie.")
+		Label7 = tk.Label(self.popup, text = "Et la dernière place revient à notre espèce favorite : les requins, avec seulement une dizaine de morts par an.\nCela vous surprend? Les requins sont énormément diabolisés dans les films et médias, alors que statistiquement il sont moins dangereux que votre animal de compagnie.",bg = '#717171')
 		Label7.pack()
 
 		Bouton1 = tk.Button(self.popup, text = 'Suivant', command = lambda : self.popup.destroy())
