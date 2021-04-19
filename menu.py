@@ -111,7 +111,7 @@ class MenuFinal(Page):
 		self.Label4 = tk.Label(self, text = "suspence.....", font= ("Courier",15), fg = 'black')
 		self.Label4.pack()
 
-		Bouton1 = tk.Button(self, text = 'Afficher score', command = lambda : self.afficher_score(), bg = '#00d0cb', activebackground = '#00d0cb')
+		Bouton1 = tk.Button(self, text = 'Afficher score',font= ("Courier",10), command = lambda : self.afficher_score(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 	def afficher_score(self):
