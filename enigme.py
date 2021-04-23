@@ -14,7 +14,7 @@ class Enigme1(Page):
 		Label1 = tk.Label(self, text = "C'est parti ! \n Décodez ceci pour continuer",  font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
-		code = tk.PhotoImage(file='codemorse.png')
+		code = tk.PhotoImage(file='image/codemorse.png')
 		Label2 = tk.Label(self, image = code)
 		Label2.image = code
 		Label2.pack()
@@ -39,10 +39,10 @@ class Enigme1(Page):
 
 	def alphabet(self):
 		self.popup = tk.Toplevel(self)
-		self.list_of_tops.append(self.popup)
+		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		alpha = tk.PhotoImage(file='alphamorse.png')
+		alpha = tk.PhotoImage(file='image/alphamorse.png')
 		Label1 = tk.Label(self.popup, image = alpha)
 		Label1.image = alpha
 		Label1.pack()
@@ -54,7 +54,7 @@ class Enigme1(Page):
 		self.destroy_all()
 		
 		self.popup = tk.Toplevel(self)
-		self.list_of_tops.append(self.popup)
+		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
 		Label1 = tk.Label(self.popup, text = "Réessayer", font= ("Courier",12), fg = 'white',bg = '#717171')
@@ -65,10 +65,10 @@ class Enigme1(Page):
 
 	def requin_blanc(self):
 		self.popup = tk.Toplevel(self)
-		self.list_of_tops.append(self.popup)
+		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		alpha = tk.PhotoImage(file='requinblanc.png')
+		alpha = tk.PhotoImage(file='image/requinblanc.png')
 		Label1 = tk.Label(self.popup, image = alpha)
 		Label1.image = alpha
 		Label1.pack()
@@ -130,10 +130,10 @@ class Enigme2(Page):
 		self.destroy_all()
 
 		self.popup = tk.Toplevel(self)
-		self.list_of_tops.append(self.popup)
+		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		indice = ['affiche1.png', 'affiche2.png', 'affiche3.png', 'affiche4.png', 'affiche5.png']
+		indice = ['image/affiche1.png', 'image/affiche2.png', 'image/affiche3.png', 'image/affiche4.png', 'image/affiche5.png']
 
 		indicen = tk.PhotoImage(file=indice[n])
 		Label1 = tk.Label(self.popup, image = indicen)
@@ -147,7 +147,7 @@ class Enigme2(Page):
 		self.destroy_all()
 		
 		self.popup = tk.Toplevel(self)
-		self.list_of_tops.append(self.popup)
+		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
 		Label1 = tk.Label(self.popup, text = "Réessayer", font= ("Courier",12), fg = 'white',bg = '#717171')
@@ -158,10 +158,10 @@ class Enigme2(Page):
 
 	def squale(self):
 		self.popup = tk.Toplevel(self)
-		self.list_of_tops.append(self.popup)
+		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		alpha = tk.PhotoImage(file='squale.png')
+		alpha = tk.PhotoImage(file='image/squale.png')
 		Label1 = tk.Label(self.popup, image = alpha)
 		Label1.image = alpha
 		Label1.pack()
@@ -263,7 +263,7 @@ class Enigme3(Page):
 		self.destroy_all()
 		
 		self.popup = tk.Toplevel(self)
-		self.list_of_tops.append(self.popup)
+		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
 		Label1 = tk.Label(self.popup, text = "Réessayer", font= ("Courier",12), fg = 'white',bg = '#717171')
@@ -274,10 +274,10 @@ class Enigme3(Page):
 
 	def danger(self):
 		self.popup = tk.Toplevel(self)
-		self.list_of_tops.append(self.popup)
+		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		alpha = tk.PhotoImage(file='danger.png')
+		alpha = tk.PhotoImage(file='image/danger.png')
 		Label1 = tk.Label(self.popup, image = alpha)
 		Label1.image = alpha
 		Label1.pack()

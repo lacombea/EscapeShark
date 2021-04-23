@@ -12,7 +12,7 @@ class Menu1(Page):
 
         Label1 = tk.Label(self, text = 'Bienvenue dans Escape Shark !',font=("Courier",20), fg = '#00d0cb')
         Label1.pack()
-        logo = tk.PhotoImage(file='logo.png')
+        logo = tk.PhotoImage(file='image/logo.png')
         Label2 = tk.Label(self, image = logo)
         Label2.image = logo
         Label2.pack()
@@ -34,7 +34,7 @@ class Menu2(Page):
 		Label1 = tk.Label(self, text = 'Qui sommes nous ?', font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
-		alexia = tk.PhotoImage(file='alexia.png')
+		alexia = tk.PhotoImage(file='image/alexia.png')
 		Label2 = tk.Label(self, image = alexia)
 		Label2.image = alexia
 		Label2.pack()
@@ -42,7 +42,7 @@ class Menu2(Page):
 		Label3 = tk.Label(self, font=("Courier",12), wraplength = 700, text = 'Je m’appelle Alexia LACOMBE. Ayant beaucoup voyagé, j’ai découvert  une passion  pour  le  Snorkeling ainsi  que  pour  la  plongée sous-marine que j’ai pratiquée en club et ainsi passé mon niveau 1.')
 		Label3.pack()
 
-		baptiste = tk.PhotoImage(file='baptiste.png')
+		baptiste = tk.PhotoImage(file='image/baptiste.png')
 		Label4 = tk.Label(self, image = baptiste)
 		Label4.image = baptiste
 		Label4.pack()
@@ -108,7 +108,7 @@ class Menu4(Page):
 			self.destroy_all()
 		
 			self.popup = tk.Toplevel(self)
-			self.list_of_tops.append(self.popup)
+			Page.list_of_tops.append(self.popup)
 			self.popup.configure(bg = '#717171')
 
 			Label1 = tk.Label(self.popup, text = "Veuillez rentrer votre nom et prénom", font= ("Courier",12), fg = 'white',bg = '#717171')
@@ -141,12 +141,17 @@ class MenuFinal(Page):
 		self.Label4 = tk.Label(self, text = " ")
 		self.Label4.pack()
 
-		Bouton1 = tk.Button(self, text = 'suspence.....',font= ("Courier",10), command = lambda : self.afficher_score(), bg = '#00d0cb', activebackground = '#00d0cb')
-		Bouton1.pack()
+		self.Bouton1 = tk.Button(self, text = 'suspence.....',font= ("Courier",10), command = lambda : self.afficher_score(), bg = '#00d0cb', activebackground = '#00d0cb')
+		self.Bouton1.pack()
+
+		self.Label5 = tk.Label(self, text = " ")
+		self.Label5.pack()
 
 	def afficher_score(self):
 		self.destroy_all()
+		self.Bouton1.destroy()
 		self.Label1.configure(text="Félicitations "+ joueur.prénom + " " + joueur.nom + "!!!", font= ("Courier",20), fg = '#00d0cb') 
 		self.Label2.configure(text = "Vous avez terminé le jeu dans le temps imparti", font= ("Courier",15))
 		self.Label3.configure(text = "Votre temps :", font= ("Courier",15))
 		self.Label4.configure(text=Timer.time, fg = '#00d0cb', font= ("Courier",20)) 
+		self.Label5.configure(text = "Veuillez appeller Alexia ou Baptiste pour valider votre score!", font= ("Courier",15))
