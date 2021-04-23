@@ -32,7 +32,7 @@ class Enigme1(Page):
 		if self.Saisie.get() == 'requin blanc':
 			self.destroy_all()
 			self.requin_blanc()
-			controller.show_frame("Enigme5")
+			controller.show_frame("Enigme2")
 		else :
 			self.wrong()
 			self.Saisie.delete(0,40)
