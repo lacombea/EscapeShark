@@ -17,7 +17,7 @@ class App(tk.Tk):
         container.grid_columnconfigure(2, weight=1)
         
         self.frames = {}
-        pages = (Menu1, Menu2, Menu3, Menu4, Enigme1, Enigme2, Enigme3, MenuFinal)
+        pages = (Menu1, Menu2, Menu3, Menu4, Enigme1, Enigme2, Enigme3, Enigme4, Enigme5, MenuFinal)
         for F in pages:
             page_name = F.__name__
             frame = F(parent=container, controller=self)
