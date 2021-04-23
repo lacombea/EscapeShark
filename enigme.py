@@ -14,7 +14,7 @@ class Enigme1(Page):
 		Label1 = tk.Label(self, text = "C'est parti ! \n Décodez ceci pour continuer",  font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
-		code = tk.PhotoImage(file='image/codemorse.png')
+		code = tk.PhotoImage(file='images/codemorse.png')
 		Label2 = tk.Label(self, image = code)
 		Label2.image = code
 		Label2.pack()
@@ -42,7 +42,7 @@ class Enigme1(Page):
 		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		alpha = tk.PhotoImage(file='image/alphamorse.png')
+		alpha = tk.PhotoImage(file='images/alphamorse.png')
 		Label1 = tk.Label(self.popup, image = alpha)
 		Label1.image = alpha
 		Label1.pack()
@@ -68,7 +68,7 @@ class Enigme1(Page):
 		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		alpha = tk.PhotoImage(file='image/requinblanc.png')
+		alpha = tk.PhotoImage(file='images/requinblanc.png')
 		Label1 = tk.Label(self.popup, image = alpha)
 		Label1.image = alpha
 		Label1.pack()
@@ -133,7 +133,7 @@ class Enigme2(Page):
 		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		indice = ['image/affiche1.png', 'image/affiche2.png', 'image/affiche3.png', 'image/affiche4.png', 'image/affiche5.png']
+		indice = ['images/affiche1.png', 'images/affiche2.png', 'images/affiche3.png', 'images/affiche4.png', 'images/affiche5.png']
 
 		indicen = tk.PhotoImage(file=indice[n])
 		Label1 = tk.Label(self.popup, image = indicen)
@@ -161,7 +161,7 @@ class Enigme2(Page):
 		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		alpha = tk.PhotoImage(file='image/squale.png')
+		alpha = tk.PhotoImage(file='images/squale.png')
 		Label1 = tk.Label(self.popup, image = alpha)
 		Label1.image = alpha
 		Label1.pack()
@@ -186,15 +186,15 @@ class Enigme3(Page):
 
 		cadre0=tk.Frame(self)
 		cadre0.pack()
-		Label1 = tk.Label(cadre0, text = "éléphant",font= ("Courier",10))
+		Label1 = tk.Label(cadre0, text = "éléphant ",font= ("Courier",10))
 		Label1.pack(side = 'left')
-		Label2 = tk.Label(cadre0, text = "chien",font= ("Courier",10))
+		Label2 = tk.Label(cadre0, text = " chien ",font= ("Courier",10))
 		Label2.pack(side = 'left')
-		Label3 = tk.Label(cadre0, text = "requin",font= ("Courier",10))
+		Label3 = tk.Label(cadre0, text = " requin ",font= ("Courier",10))
 		Label3.pack(side = 'left')
-		Label4 = tk.Label(cadre0, text = "hippopotame",font= ("Courier",10))
+		Label4 = tk.Label(cadre0, text = " hippopotame ",font= ("Courier",10))
 		Label4.pack(side = 'left')
-		Label5 = tk.Label(cadre0, text = "serpent",font= ("Courier",10))
+		Label5 = tk.Label(cadre0, text = " serpent",font= ("Courier",10))
 		Label5.pack(side = 'left')
 
 		cadre1=tk.Frame(self)
@@ -254,7 +254,7 @@ class Enigme3(Page):
 			self.destroy_all()
 			Timer.time = Timer.get_time(a.App)
 			self.danger()
-			controller.show_frame("MenuFinal")
+			controller.show_frame("Enigme4")
 		else :
 			self.wrong()
 			self.Saisie1.delete(0,40)
@@ -277,7 +277,7 @@ class Enigme3(Page):
 		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		alpha = tk.PhotoImage(file='image/danger.png')
+		alpha = tk.PhotoImage(file='images/danger.png')
 		Label1 = tk.Label(self.popup, image = alpha)
 		Label1.image = alpha
 		Label1.pack()
@@ -298,3 +298,80 @@ class Enigme3(Page):
 
 		Bouton1 = tk.Button(self.popup,font= ("Courier",10),bg = '#00d0cb', wraplength = 700, text = 'Suivant', command = lambda : self.popup.destroy(), activebackground = '#00d0cb')
 		Bouton1.pack()
+
+class Enigme4(Page):
+
+	def __init__(self, parent, controller):
+		
+		Page.__init__(self, parent, controller)
+
+		Label1 = tk.Label(self, text = "Connaissez-vous ces requins ?", font= ("Courier",20), fg = '#00d0cb')
+		Label1.pack()
+		Label2 = tk.Label(self,font= ("Courier",12), text = "Saurez-vous trouver comment s'appellent ces requins ?")
+		Label2.pack()
+
+		cadre0=tk.Frame(self)
+		cadre0.pack()
+		Label1 = tk.Label(cadre0, text = "requin blanc ",font= ("Courier",10))
+		Label1.pack(side = 'left')
+		Label2 = tk.Label(cadre0, text = " requin roussette ",font= ("Courier",10))
+		Label2.pack(side = 'left')
+		Label3 = tk.Label(cadre0, text = " requin baleine ",font= ("Courier",10))
+		Label3.pack(side = 'left')
+		Label4 = tk.Label(cadre0, text = " requin tigre ",font= ("Courier",10))
+		Label4.pack(side = 'left')
+		Label5 = tk.Label(cadre0, text = " requin marteau",font= ("Courier",10))
+		Label5.pack(side = 'left')
+		Label6 = tk.Label(cadre0, text = " requin marteau",font= ("Courier",10))
+		Label6.pack(side = 'left')
+
+		cadre1=tk.Frame(self)
+		cadre1.pack()
+		requin1 = tk.PhotoImage(file='images/requinbaleine.png')
+		Label1 = tk.Label(cadre1, image = requin1)
+		Label1.image = requin1
+		Label1.pack(side = 'left')
+		self.Saisie1 = tk.Entry(cadre1, textvariable="requin1",font= ("Courier",10))
+		self.Saisie1.pack(side = 'left')
+		requin2 = tk.PhotoImage(file='images/roussette.png')
+		Label1 = tk.Label(cadre1, image = requin2)
+		Label1.image = requin2
+		Label1.pack(side = 'left')
+		self.Saisie1 = tk.Entry(cadre1, textvariable="requin2",font= ("Courier",10))
+		self.Saisie1.pack(side = 'left')
+
+		cadre2=tk.Frame(self)
+		cadre2.pack()
+		requin3 = tk.PhotoImage(file='images/requintigre.png')
+		Label1 = tk.Label(cadre2, image = requin3)
+		Label1.image = requin3
+		Label1.pack(side = 'left')
+		self.Saisie1 = tk.Entry(cadre2, textvariable="requin3",font= ("Courier",10))
+		self.Saisie1.pack(side = 'left')
+		requin4 = tk.PhotoImage(file='images/requinblanc2.png')
+		Label1 = tk.Label(cadre2, image = requin4)
+		Label1.image = requin4
+		Label1.pack(side = 'left')
+		self.Saisie1 = tk.Entry(cadre2, textvariable="requin4",font= ("Courier",10))
+		self.Saisie1.pack(side = 'left')
+
+		cadre3=tk.Frame(self)
+		cadre3.pack()
+		requin5 = tk.PhotoImage(file='images/requinmarteau.png')
+		Label1 = tk.Label(cadre3, image = requin5)
+		Label1.image = requin5
+		Label1.pack(side = 'left')
+		self.Saisie1 = tk.Entry(cadre3, textvariable="requin5",font= ("Courier",10))
+		self.Saisie1.pack(side = 'left')
+		requin6 = tk.PhotoImage(file='images/requinrenard.png')
+		Label1 = tk.Label(cadre3, image = requin6)
+		Label1.image = requin6
+		Label1.pack(side = 'left')
+		self.Saisie1 = tk.Entry(cadre3, textvariable="requin6",font= ("Courier",10))
+		self.Saisie1.pack(side = 'left')
+
+		Label3 = tk.Label(self, font= ("Courier",10), text = "NB : il faut entrer le nom des animaux dans les différentes cases")
+		Label3.pack()
+
+		Bouton0  = tk.Button(self, text = 'Valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
+		Bouton0.pack()

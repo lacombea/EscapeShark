@@ -12,7 +12,7 @@ class Menu1(Page):
 
         Label1 = tk.Label(self, text = 'Bienvenue dans Escape Shark !',font=("Courier",20), fg = '#00d0cb')
         Label1.pack()
-        logo = tk.PhotoImage(file='image/logo.png')
+        logo = tk.PhotoImage(file='images/logo.png')
         Label2 = tk.Label(self, image = logo)
         Label2.image = logo
         Label2.pack()
@@ -34,7 +34,7 @@ class Menu2(Page):
 		Label1 = tk.Label(self, text = 'Qui sommes nous ?', font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
-		alexia = tk.PhotoImage(file='image/alexia.png')
+		alexia = tk.PhotoImage(file='images/alexia.png')
 		Label2 = tk.Label(self, image = alexia)
 		Label2.image = alexia
 		Label2.pack()
@@ -42,7 +42,7 @@ class Menu2(Page):
 		Label3 = tk.Label(self, font=("Courier",12), wraplength = 700, text = 'Je m’appelle Alexia LACOMBE. Ayant beaucoup voyagé, j’ai découvert  une passion  pour  le  Snorkeling ainsi  que  pour  la  plongée sous-marine que j’ai pratiquée en club et ainsi passé mon niveau 1.')
 		Label3.pack()
 
-		baptiste = tk.PhotoImage(file='image/baptiste.png')
+		baptiste = tk.PhotoImage(file='images/baptiste.png')
 		Label4 = tk.Label(self, image = baptiste)
 		Label4.image = baptiste
 		Label4.pack()
