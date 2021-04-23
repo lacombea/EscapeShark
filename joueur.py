@@ -1,0 +1,3 @@
+class Joueur :
+    nom = ''
+    prénom = ''
