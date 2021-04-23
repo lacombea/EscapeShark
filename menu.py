@@ -4,7 +4,7 @@ from PIL import Image, ImageTk
 from page import * 
 from timer import *
 import app as a
-import main as m
+import joueur as joueur
 
 class Menu1(Page):
     def __init__(self, parent, controller):
@@ -88,13 +88,43 @@ class Menu4(Page):
 
 		Label3 = tk.Label(self, font=("Courier",12), text = "Alors, êtes-vous prêt à relever le défi ?")
 		Label3.pack()
+		
+		Label4 = tk.Label(self, text = "Présentez vous!", font= ("Courier",20), fg = '#00d0cb')
+		Label4.pack()
+
+		cadre0=tk.Frame(self)
+		cadre0.pack()
+		Label5 = tk.Label(cadre0, text = "Prénom:",font= ("Courier",10))
+		Label5.pack(side = 'left')
+		self.Saisie5 = tk.Entry(cadre0, textvariable="Prénom",font= ("Courier",10))
+		self.Saisie5.pack(side = 'left')
+		Label6 = tk.Label(cadre0, text = "Nom:",font= ("Courier",10))
+		Label6.pack(side = 'left')
+		self.Saisie6 = tk.Entry(cadre0, textvariable="Nom",font= ("Courier",10))
+		self.Saisie6.pack(side = 'left')
 
 		Bouton1 = tk.Button(self, text = 'Jouer',font= ("Courier",10), command = lambda: self.debut_jeu(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 	def debut_jeu(self, controller):
-		Timer.__init__(a.App)
-		controller.show_frame("Enigme1")
+		if (self.Saisie5.get() == '' or self.Saisie6.get() == ''):
+			self.destroy_all()
+		
+			self.popup = tk.Toplevel(self)
+			self.list_of_tops.append(self.popup)
+			self.popup.configure(bg = '#717171')
+
+			Label1 = tk.Label(self.popup, text = "Veuillez rentrer votre nom et prénom", font= ("Courier",12), fg = 'white',bg = '#717171')
+			Label1.pack()
+
+			Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
+			Bouton1.pack()
+		else : 
+			joueur.prénom = self.Saisie5.get()
+			joueur.nom = self.Saisie6.get()
+			Timer.__init__(a.App)
+			controller.show_frame("Enigme1")
+
 
 class MenuFinal(Page):
 
@@ -102,20 +132,24 @@ class MenuFinal(Page):
 
 		Page.__init__(self, parent, controller)
 
-		Label1 = tk.Label(self, text = "BRAVO!", font= ("Courier",20), fg = '#00d0cb')
-		Label1.pack()
+		self.Label1 = tk.Label(self, text = " ")
+		self.Label1.pack()
 
-		Label2 = tk.Label(self, text = "Vous avez terminé le jeu dans le temps imparti", font= ("Courier",15))
-		Label2.pack()
+		self.Label2 = tk.Label(self, text = " ")
+		self.Label2.pack()
 
-		Label3 = tk.Label(self, text = "Votre temps :", font= ("Courier",15))
-		Label3.pack()
+		self.Label3 = tk.Label(self, text = " ")
+		self.Label3.pack()
 
-		self.Label4 = tk.Label(self, text = "suspence.....", font= ("Courier",15), fg = 'black')
+		self.Label4 = tk.Label(self, text = " ")
 		self.Label4.pack()
 
-		Bouton1 = tk.Button(self, text = 'Afficher score',font= ("Courier",10), command = lambda : self.afficher_score(), bg = '#00d0cb', activebackground = '#00d0cb')
+		Bouton1 = tk.Button(self, text = 'suspence.....',font= ("Courier",10), command = lambda : self.afficher_score(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
 	def afficher_score(self):
-		self.Label4.configure(text=Timer.time, fg = '#00d0cb') 
+		self.destroy_all()
+		self.Label1.configure(text="Félicitations "+ joueur.prénom + " " + joueur.nom + "!!!", font= ("Courier",20), fg = '#00d0cb') 
+		self.Label2.configure(text = "Vous avez terminé le jeu dans le temps imparti", font= ("Courier",15))
+		self.Label3.configure(text = "Votre temps :", font= ("Courier",15))
+		self.Label4.configure(text=Timer.time, fg = '#00d0cb', font= ("Courier",20)) 
