@@ -1,8 +1,8 @@
 import tkinter as tk 
 from PIL import Image, ImageTk
 
-from menu import *
-from enigme import *
+from menus import *
+from enigmes import *
 
 class App(tk.Tk):
     def __init__(self):
