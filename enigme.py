@@ -252,7 +252,6 @@ class Enigme3(Page):
 
 		if (self.Saisie1.get() == 'serpent' and self.Saisie2.get() == 'chien' and self.Saisie3.get() == 'hippopotame' and self.Saisie4.get() == 'éléphant' and self.Saisie5.get() == 'requin'):
 			self.destroy_all()
-			Timer.time = Timer.get_time(a.App)
 			self.danger()
 			controller.show_frame("Enigme4")
 		else :
@@ -416,7 +415,6 @@ class Enigme4(Page):
 
 		if (self.Saisie1.get() == 'requin baleine' and self.Saisie2.get() == 'requin roussette' and self.Saisie3.get() == 'requin tigre' and self.Saisie4.get() == 'requin blanc' and self.Saisie5.get() == 'requin marteau' and self.Saisie6.get() == 'requin renard'):
 			self.destroy_all()
-			Timer.time = Timer.get_time(a.App)
 			self.especesrequin()
 			controller.show_frame("Enigme5")
 		else :
