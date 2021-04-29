@@ -114,7 +114,7 @@ class Enigme6(Page):
         Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n",font= ("Courier",15),fg = 'white',bg = '#717171')
         Label2.pack()
 
-        Label3 = tk.Label(self.popup,wraplength = 600, font= ("Courier",12), fg = 'white', bg = '#717171', text = "Deux particularitées du requins sont sa nageoire caudale qu'il utilise pour se propulser et son énorme machoire. \n Le requin est prédateur qui se nourrit de cadavre et d'animaux malades, il est donc indisensable pour les océans car il mange les animaux faibles et régulent les populations. \n Il  est par contre victime de surpêche par les humains nottement pous les ailerons. On estimme qu'il y a 100 millions d'individus tués chaque années dans la monde.")
+        Label3 = tk.Label(self.popup,wraplength = 600, font= ("Courier",12), fg = 'white', bg = '#717171', text = "Les deux particularités du requins sont sa nageoire caudale qu'il utilise pour se propulser et son énorme machoire pour chasser. \nLe requin est un prédateur qui se nourrit de cadavres et d'animaux malades, il est donc indispensable pour les océans car il mange les animaux faibles et régule les populations. \nIl  est par contre victime de surpêche par les humains notamment pous ses ailerons. On estimme qu'il y a 100 millions d'individus tués chaque année dans le monde.")
         Label3.pack()
         Label4 = tk.Label(self.popup, text = " ",bg = '#717171')
         Label4.pack()
