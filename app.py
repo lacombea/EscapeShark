@@ -2,7 +2,13 @@ import tkinter as tk
 from PIL import Image, ImageTk
 
 from menus import *
-from enigmes import *
+from enigmes.enigme1 import *
+from enigmes.enigme2 import *
+from enigmes.enigme3 import *
+from enigmes.enigme4 import *
+from enigmes.enigme5 import *
+from enigmes.enigme6 import *
+from enigmes.enigme7 import *
 
 class App(tk.Tk):
     def __init__(self):
@@ -17,7 +23,7 @@ class App(tk.Tk):
         container.grid_columnconfigure(2, weight=1)
         
         self.frames = {}
-        pages = (Menu1, Menu2, Menu3, Menu4, Enigme1, Enigme2, Enigme3, Enigme4, Enigme5, MenuFinal)
+        pages = (Menu1, Menu2, Menu3, Menu4, Enigme1, Enigme2, Enigme3, Enigme4, Enigme5, Enigme6, Enigme7, MenuFinal)
         for F in pages:
             page_name = F.__name__
             frame = F(parent=container, controller=self)

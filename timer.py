@@ -1,6 +1,6 @@
 import time
 
-from app import *
+#from app import *
 
 class Timer:
 	def __init__(self):

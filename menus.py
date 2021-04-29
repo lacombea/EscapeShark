@@ -195,6 +195,7 @@ class MenuFinal(Page):
 
 	def afficher_score(self):
 		self.destroy_all()
+		Timer.time = Timer.get_time(a.App)
 		self.Bouton1.destroy()
 		self.Label1.configure(text=" ")
 		self.Label2.configure(text="Félicitations "+ joueur.prénom + " " + joueur.nom + "!!!", font= ("Courier",20), fg = '#00d0cb') 
