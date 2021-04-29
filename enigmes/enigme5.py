@@ -12,7 +12,7 @@ class Enigme5(Page):
 
 		Label1 = tk.Label(self, text = " ")
 		Label1.pack()
-		Label2 = tk.Label(self, text = "C'est 5 là sont les plus connus, \n mais combien existe-t-il d'espèces au total ?", font= ("Courier",20), fg = '#00d0cb')
+		Label2 = tk.Label(self, text = "C'est 6 là sont les plus connus, \n mais combien existe-t-il d'espèces au total ?", font= ("Courier",20), fg = '#00d0cb')
 		Label2.pack()
 		Label3 = tk.Label(self, text = " ")
 		Label3.pack()
