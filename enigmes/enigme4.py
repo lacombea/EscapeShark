@@ -10,14 +10,10 @@ class Enigme4(Page):
 		
 		Page.__init__(self, parent, controller)
 
-		Label1 = tk.Label(self, text= " ")
+		Label1 = tk.Label(self, text = "\nConnaissez-vous ces requins ?", font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
-		Label2 = tk.Label(self, text = "Connaissez-vous ces requins ?", font= ("Courier",20), fg = '#00d0cb')
+		Label2 = tk.Label(self,font= ("Courier",12), text = "Saurez-vous trouver comment se nomment ces requins ?\n")
 		Label2.pack()
-		Label3 = tk.Label(self,font= ("Courier",12), text = "Saurez-vous trouver comment s'appellent ces requins ?")
-		Label3.pack()
-		Label4 = tk.Label(self, text= " ")
-		Label4.pack()
 
 		cadre0=tk.Frame(self)
 		cadre0.pack()
@@ -31,10 +27,8 @@ class Enigme4(Page):
 		Label4.pack(side = 'left')
 		Label5 = tk.Label(cadre0, text = " requin renard",font= ("Courier",10))
 		Label5.pack(side = 'left')
-		Label6 = tk.Label(cadre0, text = " requin marteau",font= ("Courier",10))
+		Label6 = tk.Label(cadre0, text = " requin marteau\n",font= ("Courier",10))
 		Label6.pack(side = 'left')
-		Label5 = tk.Label(self, text= " ")
-		Label5.pack()
 
 		cadre1=tk.Frame(self)
 		cadre1.pack()
@@ -81,12 +75,8 @@ class Enigme4(Page):
 		self.Saisie6 = tk.Entry(cadre3, textvariable="requin6",font= ("Courier",10))
 		self.Saisie6.pack(side = 'left')
 
-		Label6 = tk.Label(self, text= " ")
-		Label6.pack()
-		Label7 = tk.Label(self, font= ("Courier",10), text = "NB : il faut entrer le nom des animaux dans les différentes cases")
-		Label7.pack()
-		Label8 = tk.Label(self, text= " ")
-		Label8.pack()
+		Label3 = tk.Label(self, font= ("Courier",10), text = "\nNB : il faut entrer le nom des animaux dans les différentes cases\n")
+		Label3.pack()
 		Bouton0  = tk.Button(self, text = 'Valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton0.pack()
 
@@ -126,7 +116,7 @@ class Enigme4(Page):
 			self.Saisie6.configure(state = 'disabled')	
 		else :
 			self.wrong()
-			self.Saisie5.delete(0,40)
+			self.Saisie6.delete(0,40)
 
 		if (self.Saisie1.get() == 'requin baleine' and self.Saisie2.get() == 'requin roussette' and self.Saisie3.get() == 'requin tigre' and self.Saisie4.get() == 'requin blanc' and self.Saisie5.get() == 'requin marteau' and self.Saisie6.get() == 'requin renard'):
 			self.destroy_all()
@@ -143,12 +133,8 @@ class Enigme4(Page):
 		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		Label1 = tk.Label(self.popup, text= " ",bg = '#717171')
+		Label1 = tk.Label(self.popup, text = "\nVeuillez réessayer\n", font= ("Courier",12), fg = 'white',bg = '#717171')
 		Label1.pack()
-		Label2 = tk.Label(self.popup, text = "Réessayer", font= ("Courier",12), fg = 'white',bg = '#717171')
-		Label2.pack()
-		Label3 = tk.Label(self.popup, text= " ",bg = '#717171')
-		Label3.pack()
 
 		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
@@ -166,9 +152,7 @@ class Enigme4(Page):
 		Label2 = tk.Label(self.popup,font= ("Courier",15),fg = 'white',bg = '#717171', text = "Bravo, vous avez un minimum de connaissances en zoologie ! \n\n Le saviez-vous ? \n")
 		Label2.pack()
 
-		Label3 = tk.Label(self.popup,font= ("Courier",12),fg = 'white',bg = '#717171', wraplength = 700, text = "Il existe d'autres espèces que le grand requin blanc (eh oui): elles se différencient suivant dertains critères, comme la taille pour le requin baleine, la couleur de peau pour le requin tigre, ou encore leur situation géograpghique comme la roussette, que l'on peut trouver dans la rade de Brest.")
+		Label3 = tk.Label(self.popup,font= ("Courier",12),fg = 'white',bg = '#717171', wraplength = 700, text = "Il existe d'autres espèces que le grand requin blanc (eh oui): elles se différencient suivant certains critères, comme la taille pour le requin baleine, la couleur de peau pour le requin tigre, ou encore leur situation géographique pour la roussette, que l'on peut trouver dans la rade de Brest.\n")
 		Label3.pack()
-		Label4 = tk.Label(self.popup, text= " ",bg = '#717171')
-		Label4.pack()
 		Bouton1 = tk.Button(self.popup,font= ("Courier",10),bg = '#00d0cb', wraplength = 700, text = 'Suivant', command = lambda : self.popup.destroy(), activebackground = '#00d0cb')
 		Bouton1.pack()

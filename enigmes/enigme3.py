@@ -10,13 +10,9 @@ class Enigme3(Page):
 		
 		Page.__init__(self, parent, controller)
 
-		Label1 = tk.Label(self, text= " ")
+		Label1 = tk.Label(self, text = "\nC'est parti ! \n Classez ces espèces par niveau de dangerosité\n", font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
-		Label2 = tk.Label(self, text = "C'est parti ! \n Classez ces espèces par niveau de dangerosité", font= ("Courier",20), fg = '#00d0cb')
-		Label2.pack()
 
-		Label3 = tk.Label(self, text= " ")
-		Label3.pack()
 		cadre0=tk.Frame(self)
 		cadre0.pack()
 		Label1 = tk.Label(cadre0, text = "éléphant ",font= ("Courier",10))
@@ -45,14 +41,10 @@ class Enigme3(Page):
 		self.Saisie5 = tk.Entry(cadre1, textvariable="5",font= ("Courier",10))
 		self.Saisie5.pack(side = 'left')
 		
-		Label5 = tk.Label(self,font= ("Courier",10), text = "- dangereux <------                 ------> + dangereux")
-		Label5.pack()
-		Label6 = tk.Label(self, text= " ")
-		Label6.pack()
-		Label7 = tk.Label(self, font= ("Courier",10), text = "NB : il faut entrer le nom des animaux dans les différentes cases")
-		Label7.pack()
-		Label8 = tk.Label(self, text= " ")
-		Label8.pack()
+		Label2 = tk.Label(self,font= ("Courier",10), text = "- dangereux <------                 ------> + dangereux\n")
+		Label2.pack()
+		Label3 = tk.Label(self, font= ("Courier",10), text = "NB : il faut entrer le nom des animaux dans les différentes cases\n")
+		Label3.pack()
 		Bouton0  = tk.Button(self, text = 'Valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton0.pack()
 
@@ -103,12 +95,8 @@ class Enigme3(Page):
 		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		Label1 = tk.Label(self.popup, text= " ",bg = '#717171')
+		Label1 = tk.Label(self.popup, text = "\nVeuillez réessayer\n", font= ("Courier",12), fg = 'white',bg = '#717171')
 		Label1.pack()
-		Label2 = tk.Label(self.popup, text = "Réessayer", font= ("Courier",12), fg = 'white',bg = '#717171')
-		Label2.pack()
-		Label3 = tk.Label(self.popup, text= " ",bg = '#717171')
-		Label3.pack()
 
 		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
@@ -134,10 +122,8 @@ class Enigme3(Page):
 		Label5.pack()
 		Label6 = tk.Label(self.popup,font= ("Courier",12),fg = 'white',bg = '#717171', wraplength = 700, text = "en quatrième place, nous avons l'éléphant avec 100 morts par an.")
 		Label6.pack()
-		Label7 = tk.Label(self.popup,font= ("Courier",12),fg = 'white',bg = '#717171', wraplength = 700, text = "Et la dernière place revient à notre espèce favorite : les requins, avec seulement une dizaine de morts par an.\nCela vous surprend? Les requins sont énormément diabolisés dans les films et médias, alors que statistiquement il sont moins dangereux que votre animal de compagnie.")
+		Label7 = tk.Label(self.popup,font= ("Courier",12),fg = 'white',bg = '#717171', wraplength = 700, text = "Et la dernière place revient à notre espèce favorite : les requins, avec seulement une dizaine de morts par an.\nCela vous surprend ? Les requins sont énormément diabolisés dans les films et médias, alors que statistiquement ils sont moins dangereux que votre animal de compagnie.\n")
 		Label7.pack()
-		Label8 = tk.Label(self.popup, text= " ",bg = '#717171')
-		Label8.pack()
 
 		Bouton1 = tk.Button(self.popup,font= ("Courier",10),bg = '#00d0cb', wraplength = 700, text = 'Suivant', command = lambda : self.popup.destroy(), activebackground = '#00d0cb')
 		Bouton1.pack()

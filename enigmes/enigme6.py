@@ -14,19 +14,15 @@ class Enigme6(Page):
         self.liste_trouvé  = []
         self.liste_disabled = []
 
-        Label1 = tk.Label(self, text= " ")
+        Label1 = tk.Label(self, text = "\nSaurez vous trouver 6 mots en rapport \n avec les requins dans cette grille ?\n",  font= ("Courier",20), fg = '#00d0cb')
         Label1.pack()
-        Label2 = tk.Label(self, text = "Saurez vous trouver 6 mots en rapport \n avec les requins dans cette grille ?",  font= ("Courier",20), fg = '#00d0cb')
+
+        motsmeles = tk.PhotoImage(file='images/motsmeles.png')
+        Label2 = tk.Label(self, image = motsmeles)
+        Label2.image = motsmeles
         Label2.pack()
         Label3 = tk.Label(self, text= " ")
         Label3.pack()
-
-        motsmeles = tk.PhotoImage(file='images/motsmeles.png')
-        Label4 = tk.Label(self, image = motsmeles)
-        Label4.image = motsmeles
-        Label4.pack()
-        Label5 = tk.Label(self, text= " ")
-        Label5.pack()
 
         cadre0=tk.Frame(self)
         cadre0.pack()
@@ -56,8 +52,8 @@ class Enigme6(Page):
         self.Saisie6 = tk.Entry(cadre1, textvariable="mot6",font= ("Courier",10))
         self.Saisie6.pack(side = 'left')
 
-        Label6 = tk.Label(self, text= " ")
-        Label6.pack()
+        Label4 = tk.Label(self, text= " ")
+        Label4.pack()
         Bouton2  = tk.Button(self, text = 'Valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
         Bouton2.pack()
 
@@ -80,7 +76,8 @@ class Enigme6(Page):
 
         if len(self.liste_trouvé) :
             self.destroy_all()
-            controller.show_frame("MenuFinal")
+            self.surpeche()
+            controller.show_frame("Enigme7")
         else :
             self.wrong()
 
@@ -91,12 +88,8 @@ class Enigme6(Page):
         Page.list_of_tops.append(self.popup)
         self.popup.configure(bg = '#717171')
 
-        Label1 = tk.Label(self.popup, text = " ",bg = '#717171')
+        Label1 = tk.Label(self.popup, text = "\nVeuillez réessayer\n", font= ("Courier",12), fg = 'white',bg = '#717171')
         Label1.pack()
-        Label2 = tk.Label(self.popup, text = "Réessayer", font= ("Courier",12), fg = 'white',bg = '#717171')
-        Label2.pack()
-        Label3 = tk.Label(self.popup, text = " ",bg = '#717171')
-        Label3.pack()
 
         Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
         Bouton1.pack()
@@ -114,10 +107,8 @@ class Enigme6(Page):
         Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n",font= ("Courier",15),fg = 'white',bg = '#717171')
         Label2.pack()
 
-        Label3 = tk.Label(self.popup,wraplength = 600, font= ("Courier",12), fg = 'white', bg = '#717171', text = "Deux particularitées du requins sont sa nageoire caudale qu'il utilise pour se propulser et son énorme machoire composée de plusieurs rangées de dents. \n Le requin est prédateur qui se nourrit de cadavre et d'animaux malades, il est donc indisensable pour les océans car il mange les animaux faibles et régulent les populations. \n Il  est par contre victime de surpêche par les humains nottement pous les ailerons. On estimme qu'il y a 100 millions d'individus tués chaque années dans la monde.")
+        Label3 = tk.Label(self.popup,wraplength = 600, font= ("Courier",12), fg = 'white', bg = '#717171', text = "Les deux particularités du requin sont sa nageoire caudale qu'il utilise pour se propulser et son énorme machoire composée de plusieurs rangées de dents tranchantes. \n Le requin est un prédateur qui se nourrit de cadavres et d'animaux malades, il est donc indispensable pour les océans car il mange les animaux faibles et régule les populations. \nIl  est par contre victime de surpêche par les humains notamment pour ses ailerons. On estimme qu'il y a 100 millions d'individus tués chaque année dans le monde.\n")
         Label3.pack()
-        Label4 = tk.Label(self.popup, text = " ",bg = '#717171')
-        Label4.pack()
 
         Bouton1 = tk.Button(self.popup, text = 'Suivant',font= ("Courier",10),command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
         Bouton1.pack()

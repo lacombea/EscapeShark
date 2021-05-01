@@ -10,23 +10,19 @@ class Enigme2(Page):
 		
 		Page.__init__(self, parent, controller)
 
-		Label1 = tk.Label(self, text= " ")
+		Label1 = tk.Label(self, text = "\nC'est parti !", font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
-		Label2 = tk.Label(self, text = "C'est parti !", font= ("Courier",20), fg = '#00d0cb')
+		Label2 = tk.Label(self, text = "Trouvez le code\n", font= ("Courier",20), fg = '#00d0cb')
 		Label2.pack()
-		Label3 = tk.Label(self, text = "Trouvez le code", font= ("Courier",20), fg = '#00d0cb')
-		Label3.pack()
-		Label4 = tk.Label(self, text= " ")
-		Label4.pack()
 
 		self.Saisie = tk.Entry(self, textvariable="bl",font= ("Courier",10))
 		self.Saisie.pack()
-		Label5 = tk.Label(self, text= " ")
-		Label5.pack()
+		Label3 = tk.Label(self, text= " ")
+		Label3.pack()
 		Bouton0  = tk.Button(self, text = 'Valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton0.pack()
-		Label6 = tk.Label(self, text= " ")
-		Label6.pack()
+		Label4 = tk.Label(self, text= " ")
+		Label4.pack()
 
 		cadre0=tk.Frame(self)
 		cadre0.pack()
@@ -87,12 +83,8 @@ class Enigme2(Page):
 		Page.list_of_tops.append(self.popup)
 		self.popup.configure(bg = '#717171')
 
-		Label1 = tk.Label(self.popup, text= " ",bg = '#717171')
+		Label1 = tk.Label(self.popup, text = "\nVeuillez réessayer\n", font= ("Courier",12), fg = 'white',bg = '#717171')
 		Label1.pack()
-		Label2 = tk.Label(self.popup, text = "Réessayer", font= ("Courier",12), fg = 'white',bg = '#717171')
-		Label2.pack()
-		Label3 = tk.Label(self.popup, text= " ",bg = '#717171')
-		Label3.pack()
 
 		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
@@ -107,13 +99,11 @@ class Enigme2(Page):
 		Label1.image = alpha
 		Label1.pack()
 
-		Label2 = tk.Label(self.popup,font= ("Courier",15),fg = 'white',bg = '#717171', text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n")
-		Label2.pack()
+		Label1 = tk.Label(self.popup,font= ("Courier",15),fg = 'white',bg = '#717171', text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n")
+		Label1.pack()
 
-		Label3 = tk.Label(self.popup,font= ("Courier",12),fg = 'white',bg = '#717171', wraplength = 700, text = "Le mot squale est un terme qui englobe l'ensemble des espèces de requins avec des caractéristiques communes, comme la dentition, la texture de la peau ou la silhouette fuselée. ")
-		Label3.pack()
-		Label4 = tk.Label(self.popup, text= " ",bg = '#717171')
-		Label4.pack()
+		Label2 = tk.Label(self.popup,font= ("Courier",12),fg = 'white',bg = '#717171', wraplength = 700, text = "Le mot squale est un terme qui englobe l'ensemble des espèces de requins avec des caractéristiques communes, comme la dentition, la texture de la peau ou encore la silhouette fuselée.\n")
+		Label2.pack()
 
 		Bouton1 = tk.Button(self.popup, text = 'Suivant',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
