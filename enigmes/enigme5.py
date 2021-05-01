@@ -58,7 +58,7 @@ class Enigme5(Page):
 		if self.Saisie.get() == '529 especes':
 			self.destroy_all()
 			self.especes()
-			controller.show_frame("Enigme6")
+			controller.show_frame("MenuFinal")
 		else :
 			self.wrong()
 			self.Saisie.delete(0,40)

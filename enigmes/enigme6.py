@@ -75,12 +75,12 @@ class Enigme6(Page):
 
         for i in range(len(self.liste_saisie)) :
             if not (self.liste_saisie[i] in self.liste_disabled) :
+                print(self.liste_saisie[i])
                 self.liste_saisie[i].delete(0,40)
 
-        if len(self.liste_trouvé) == 6 :
+        if len(self.liste_trouvé) :
             self.destroy_all()
-            self.surpeche()
-            controller.show_frame("Enigme7")
+            controller.show_frame("MenuFinal")
         else :
             self.wrong()
 
@@ -114,7 +114,7 @@ class Enigme6(Page):
         Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n",font= ("Courier",15),fg = 'white',bg = '#717171')
         Label2.pack()
 
-        Label3 = tk.Label(self.popup,wraplength = 600, font= ("Courier",12), fg = 'white', bg = '#717171', text = "Deux particularitées du requins sont sa nageoire caudale qu'il utilise pour se propulser et son énorme machoire. \n Le requin est prédateur qui se nourrit de cadavre et d'animaux malades, il est donc indisensable pour les océans car il mange les animaux faibles et régulent les populations. \n Il  est par contre victime de surpêche par les humains nottement pous les ailerons. On estimme qu'il y a 100 millions d'individus tués chaque années dans la monde.")
+        Label3 = tk.Label(self.popup,wraplength = 600, font= ("Courier",12), fg = 'white', bg = '#717171', text = "Deux particularitées du requins sont sa nageoire caudale qu'il utilise pour se propulser et son énorme machoire composée de plusieurs rangées de dents. \n Le requin est prédateur qui se nourrit de cadavre et d'animaux malades, il est donc indisensable pour les océans car il mange les animaux faibles et régulent les populations. \n Il  est par contre victime de surpêche par les humains nottement pous les ailerons. On estimme qu'il y a 100 millions d'individus tués chaque années dans la monde.")
         Label3.pack()
         Label4 = tk.Label(self.popup, text = " ",bg = '#717171')
         Label4.pack()
