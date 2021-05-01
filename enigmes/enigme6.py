@@ -74,7 +74,7 @@ class Enigme6(Page):
                 print(self.liste_saisie[i])
                 self.liste_saisie[i].delete(0,40)
 
-        if len(self.liste_trouvé) :
+        if len(self.liste_trouvé) == 6:
             self.destroy_all()
             self.surpeche()
             controller.show_frame("Enigme7")
