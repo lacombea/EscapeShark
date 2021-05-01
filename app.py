@@ -13,9 +13,9 @@ from enigmes.enigme7 import *
 class App(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
-        # the container is where we'll stack a bunch of frames
-        # on top of each other, then the one we want visible
-        # will be raised above the others
+        # le conteneur est l'endroit où nous empilerons un tas de cadres
+        # les uns sur les autres, puis celui que nous voulons voir
+        # sera élevé au-dessus des autres
         container = tk.Frame(self)
         
         container.pack(side="top", fill="both", expand=True)
@@ -28,14 +28,14 @@ class App(tk.Tk):
             page_name = F.__name__
             frame = F(parent=container, controller=self)
             self.frames[page_name] = frame
-            # put all of the pages in the same location;
-            # the one on the top of the stacking order
-            # will be the one that is visible.
+            # mettre toutes les pages au même endroit;
+            # celui en haut de l'ordre de superposition
+            # sera celui qui est visible.
             frame.grid(row=0, column=0, sticky="nsew")
             
         self.show_frame("Menu1")
             
     def show_frame(self, page_name):
-        # show a frame for the given page name 
+        # afficher un cadre pour le nom de page donné
         frame = self.frames[page_name]
         frame.tkraise()
