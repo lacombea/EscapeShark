@@ -45,7 +45,7 @@ class Enigme3(Page):
 		self.Saisie5 = tk.Entry(cadre1, textvariable="5",font= ("Courier",10))
 		self.Saisie5.pack(side = 'left')
 		
-		Label5 = tk.Label(self,font= ("Courier",10), text = "+ dangereux <------                 ------> - dangereux")
+		Label5 = tk.Label(self,font= ("Courier",10), text = "- dangereux <------                 ------> + dangereux")
 		Label5.pack()
 		Label6 = tk.Label(self, text= " ")
 		Label6.pack()
@@ -58,13 +58,13 @@ class Enigme3(Page):
 
 	def test(self, controller):
 
-		if self.Saisie1.get() == 'serpent':
+		if self.Saisie1.get() == 'requin':
 			self.Saisie1.configure(state = 'disabled')	
 		else :
 			self.wrong()
 			self.Saisie1.delete(0,40)
 		
-		if self.Saisie2.get() == 'chien':
+		if self.Saisie2.get() == 'éléphant':
 			self.Saisie2.configure(state = 'disabled')	
 		else :
 			self.wrong()
@@ -76,19 +76,19 @@ class Enigme3(Page):
 			self.wrong()
 			self.Saisie3.delete(0,40)
 
-		if self.Saisie4.get() == 'éléphant':
+		if self.Saisie4.get() == 'chien' :
 			self.Saisie4.configure(state = 'disabled')	
 		else :
 			self.wrong()
 			self.Saisie4.delete(0,40)
 
-		if self.Saisie5.get() == 'requin':
+		if self.Saisie5.get() == 'serpent':
 			self.Saisie5.configure(state = 'disabled')	
 		else :
 			self.wrong()
 			self.Saisie5.delete(0,40)	
 
-		if (self.Saisie1.get() == 'serpent' and self.Saisie2.get() == 'chien' and self.Saisie3.get() == 'hippopotame' and self.Saisie4.get() == 'éléphant' and self.Saisie5.get() == 'requin'):
+		if (self.Saisie1.get() == 'requin' and self.Saisie2.get() == 'éléphant' and self.Saisie3.get() == 'hippopotame' and self.Saisie4.get() == 'chien' and self.Saisie5.get() == 'serpent'):
 			self.destroy_all()
 			self.danger()
 			controller.show_frame("Enigme4")
