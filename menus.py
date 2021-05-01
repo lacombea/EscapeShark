@@ -142,7 +142,7 @@ class Menu4(Page):
 		Bouton1.pack()
 		Label12 = tk.Label(self, text= " ")
 		Label12.pack()
-		Label13 = tk.Label(self, text= "! En cas de problème n'hésitez pas à appeller Alexia ou Baptiste !", font= ("Courier",15), fg = 'red')
+		Label13 = tk.Label(self, text= "! En cas de problème n'hésitez pas à appeler Alexia ou Baptiste !", font= ("Courier",15), fg = 'red')
 		Label13.pack()
 
 	def debut_jeu(self, controller):
@@ -212,5 +212,5 @@ class MenuFinal(Page):
 		self.Label9.pack()
 		self.Label10 = tk.Label(self, text=" ")
 		self.Label10.pack()
-		self.Label11 = tk.Label(self, text = "! Veuillez appeller Alexia ou Baptiste pour valider votre score !",fg = 'red', font= ("Courier",15))
+		self.Label11 = tk.Label(self, text = "! Veuillez appeler Alexia ou Baptiste pour valider votre score !",fg = 'red', font= ("Courier",15))
 		self.Label11.pack()
