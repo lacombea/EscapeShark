@@ -83,7 +83,7 @@ class Menu4(Page):
 		Label1 = tk.Label(self, text = "\nMise en contexte\n", font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
-		Label2 = tk.Label(self, font=("Courier",12), wraplength = 700, text = "Lors de ce jeu intercatif, vous allez devoir résoudre différentes énigmes sur le thème des requins afin de pouvoir progresser. Vous allez devoir utiliser votre matière grise ... si vous en avez, mais attention, votre temps est compté !\n")
+		Label2 = tk.Label(self, font=("Courier",12), wraplength = 700, text = "Lors de ce jeu intercatif, vous allez devoir résoudre différentes énigmes sur le thème des requins afin de pouvoir progresser. Vous allez devoir utiliser votre matière grise, si vous en avez... mais attention, vous devez faire vite !\n")
 		Label2.pack()
 		Label3 = tk.Label(self, font=("Courier",12), text = "Alors, êtes-vous prêt à relever le défi ?\n")
 		Label3.pack()
@@ -106,8 +106,10 @@ class Menu4(Page):
 		Label7.pack()
 		Bouton1 = tk.Button(self, text = 'Jouer',font= ("Courier",10), command = lambda: self.debut_jeu(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
-		Label8 = tk.Label(self, text= "\n! En cas de problème n'hésitez pas à appeler Alexia ou Baptiste !", font= ("Courier",15), fg = 'red')
+		Label8 = tk.Label(self, font=("Courier",12), wraplength = 700, text = "\n Même si votre temps est compté, le but du jeu est d'en apprendre plus sur les requins: prêtez attention aux différentes informations présentes au cours de votre partie.\n Amusez-vous bien ! \n")
 		Label8.pack()
+		Label9 = tk.Label(self, text= "\n! En cas de problème n'hésitez pas à appeler Alexia ou Baptiste !", font= ("Courier",15), fg = 'red')
+		Label9.pack()
 
 	def debut_jeu(self, controller):
 		if (self.Saisie5.get() == '' or self.Saisie6.get() == ''):
@@ -123,6 +125,7 @@ class Menu4(Page):
 			Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 			Bouton1.pack()
 		else : 
+			self.destroy_all()
 			joueur.prénom = self.Saisie5.get()
 			joueur.nom = self.Saisie6.get()
 			Timer.__init__(a.App)
@@ -157,12 +160,12 @@ class MenuFinal(Page):
 		self.destroy_all()
 		Timer.time = Timer.get_time(a.App)
 		self.Bouton1.destroy()
-		self.Label1.configure(text="\nFélicitations "+ joueur.prénom + " " + joueur.nom + "!!!", font= ("Courier",20), fg = '#00d0cb') 
+		self.Label1.configure(text="\nFélicitations "+ joueur.prénom + " " + joueur.nom + " !!!", font= ("Courier",20), fg = '#00d0cb') 
 		self.Label2.configure(text = "\nVous avez terminé le jeu dans le temps imparti", font= ("Courier",15))
 		self.Label3.configure(text = "Votre temps :", font= ("Courier",15))
 		self.Label4 = tk.Label(self, text=Timer.time, fg = '#00d0cb', font= ("Courier",20)) 
 		self.Label4.pack()
-		self.Label5 = tk.Label(self, text = "\nNous espérons que vous avez apprécier jouer à notre jeu, et que vous en avez appris plus sur les requins.", font= ("Courier",15))
+		self.Label5 = tk.Label(self, text = "\nNous espérons que vous avez apprécié jouer à notre jeu, et que vous en avez appris plus sur les requins.", font= ("Courier",15))
 		self.Label5.pack()
 		self.Label6 = tk.Label(self, text = "\n! Veuillez appeler Alexia ou Baptiste pour valider votre score !",fg = 'red', font= ("Courier",15))
 		self.Label6.pack()

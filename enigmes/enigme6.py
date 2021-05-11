@@ -77,7 +77,7 @@ class Enigme6(Page):
         if len(self.liste_trouvé) == 6:
             self.destroy_all()
             self.surpeche()
-            controller.show_frame("Enigme7")
+            controller.show_frame("MenuFinal")
         else :
             self.wrong()
 
@@ -107,7 +107,7 @@ class Enigme6(Page):
         Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n",font= ("Courier",15),fg = 'white',bg = '#717171')
         Label2.pack()
 
-        Label3 = tk.Label(self.popup,wraplength = 600, font= ("Courier",12), fg = 'white', bg = '#717171', text = "Les deux particularités du requin sont sa nageoire caudale qu'il utilise pour se propulser et son énorme machoire composée de plusieurs rangées de dents tranchantes. \n Le requin est un prédateur qui se nourrit de cadavres et d'animaux malades, il est donc indispensable pour les océans car il mange les animaux faibles et régule les populations. \nIl  est par contre victime de surpêche par les humains notamment pour ses ailerons. On estimme qu'il y a 100 millions d'individus tués chaque année dans le monde.\n")
+        Label3 = tk.Label(self.popup,wraplength = 1000, font= ("Courier",12), fg = 'white', bg = '#717171', text = "Les deux particularités du requin sont sa nageoire caudale qu'il utilise pour se propulser et son énorme machoire composée de plusieurs rangées de dents tranchantes. \n Le requin est un prédateur qui se nourrit de cadavres et d'animaux malades, il est donc indispensable pour les océans car il mange les animaux faibles et régule les populations. \nIl est par contre victime de surpêche par les humains notamment pour ses ailerons. On estimme qu'il y a 100 millions d'individus tués chaque année dans le monde.\n")
         Label3.pack()
 
         Bouton1 = tk.Button(self.popup, text = 'Suivant',font= ("Courier",10),command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')

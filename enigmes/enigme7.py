@@ -32,6 +32,9 @@ class Enigme7(Page):
 		Bouton2  = tk.Button(self, text = 'Valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton2.pack()
 
+		Label6 = tk.Label(self, font= ("Courier",10), text = "\nNB : si nécessaire vous pouvez ajouter un espace\n")
+		Label6.pack()
+
 	def test(self, controller):
 		if self.Saisie.get() == 'trente mille':
 			self.destroy_all()
