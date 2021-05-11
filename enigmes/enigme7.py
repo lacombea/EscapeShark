@@ -80,7 +80,7 @@ class Enigme7(Page):
 		Label2 = tk.Label(self.popup, text = "Bien joué, vous avez trouvé la réponse ! \n\n Le saviez-vous ? \n",font= ("Courier",15),fg = 'white',bg = '#717171')
 		Label2.pack()
 
-		Label3 = tk.Label(self.popup,wraplength = 600, font= ("Courier",12), fg = 'white', bg = '#717171', text = "Les requins ont plusieurs rangées de dents qui se renouvellent régulièrement au cours leur vie. Ainsi certains individus en perdent plus de 30 000 dans leur vie.\n")
+		Label3 = tk.Label(self.popup,wraplength = 600, font= ("Courier",12), fg = 'white', bg = '#717171', text = "Les requins ont plusieurs rangées de dents qui se renouvellent régulièrement au cours leur vie. Ainsi certains individus en perdent plus de 30.000 dans leur vie.\n")
 		Label3.pack()
 		Bouton1 = tk.Button(self.popup, text = 'Suivant',font= ("Courier",10),command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()

@@ -83,7 +83,7 @@ class Menu4(Page):
 		Label1 = tk.Label(self, text = "\nMise en contexte\n", font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
-		Label2 = tk.Label(self, font=("Courier",12), wraplength = 700, text = "Lors de ce jeu intercatif, vous allez devoir résoudre différentes énigmes sur le thème des requins afin de pouvoir progresser. Vous allez devoir utiliser votre matière grise ... si vous en avez, mais attention, votre temps est compté !\n")
+		Label2 = tk.Label(self, font=("Courier",12), wraplength = 700, text = "Lors de ce jeu interactif, vous allez devoir résoudre différentes énigmes sur le thème des requins afin de pouvoir progresser. Vous allez devoir utiliser votre matière grise ... si vous en avez, mais attention, votre temps est compté !\n")
 		Label2.pack()
 		Label3 = tk.Label(self, font=("Courier",12), text = "Alors, êtes-vous prêt à relever le défi ?\n")
 		Label3.pack()
