@@ -71,7 +71,6 @@ class Enigme6(Page):
 
         for i in range(len(self.liste_saisie)) :
             if not (self.liste_saisie[i] in self.liste_disabled) :
-                print(self.liste_saisie[i])
                 self.liste_saisie[i].delete(0,40)
 
         if len(self.liste_trouvé) == 6:
