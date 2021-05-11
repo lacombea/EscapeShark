@@ -9,5 +9,6 @@ from app import *
 
 if __name__ == "__main__":
 	application = App()
+	application.geometry('%dx%d+0+0'%(application.W, application.H))
 	application.title("Escape Shark")
 	application.mainloop()

@@ -10,21 +10,34 @@ class Enigme2(Page):
 		
 		Page.__init__(self, parent, controller)
 
-		Label1 = tk.Label(self, text = "\nC'est parti !", font= ("Courier",20), fg = '#00d0cb')
+		## Canva et Scrollbar
+		scrollbar = tk.Scrollbar(self, orient=tk.VERTICAL)
+		scrollbar.grid(row=0, column=1, sticky='ns')
+		
+		canva = tk.Canvas(self, yscrollcommand=scrollbar.set, width = controller.W-20, height = controller.H)
+		canva.grid(row=0, column=0, sticky='nswe')
+		
+		scrollbar.config(command=canva.yview)
+
+		## Le Frame, dans le Canvas, mais sans pack ou grid
+		frame = tk.Frame(canva, width = controller.W-20, height = controller.H)
+		frame.pack_propagate(False)
+
+		Label1 = tk.Label(frame, text = "\nC'est parti !", font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
-		Label2 = tk.Label(self, text = "Trouvez le code\n", font= ("Courier",20), fg = '#00d0cb')
+		Label2 = tk.Label(frame, text = "Trouvez le code\n", font= ("Courier",20), fg = '#00d0cb')
 		Label2.pack()
 
-		self.Saisie = tk.Entry(self, textvariable="bl",font= ("Courier",10))
+		self.Saisie = tk.Entry(frame, textvariable="bl",font= ("Courier",10))
 		self.Saisie.pack()
-		Label3 = tk.Label(self, text= " ")
+		Label3 = tk.Label(frame, text= " ")
 		Label3.pack()
-		Bouton0  = tk.Button(self, text = 'Valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
+		Bouton0  = tk.Button(frame, text = 'Valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton0.pack()
-		Label4 = tk.Label(self, text= " ")
+		Label4 = tk.Label(frame, text= " ")
 		Label4.pack()
 
-		cadre0=tk.Frame(self)
+		cadre0=tk.Frame(frame)
 		cadre0.pack()
 		Bouton1 = tk.Button(cadre0,font= ("Courier",10), text = 'Indice 1', command = lambda : self.indice(0), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack(side = 'left')
@@ -39,7 +52,7 @@ class Enigme2(Page):
 		Label3 = tk.Label(cadre0, text= " ")
 		Label3.pack()
 
-		cadre1=tk.Frame(self)
+		cadre1=tk.Frame(frame)
 		cadre1.pack()
 		Bouton4 = tk.Button(cadre1,font= ("Courier",10), text = 'Indice 4', command = lambda : self.indice(3), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton4.pack(side = 'left')
@@ -48,6 +61,14 @@ class Enigme2(Page):
 		Bouton5 = tk.Button(cadre1,font= ("Courier",10), text = 'Indice 5', command = lambda : self.indice(4), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton5.pack(side = 'left')
 
+		## MAJ de la frame
+		frame.update() 
+
+		## Ajout du frame au canva
+		canva.create_window(0, 0, anchor=tk.NW, window=frame)
+
+		## La scrollregion est la boite englobante pour tout ce qu'il y a dans le Canvas
+		canva.configure(scrollregion=canva.bbox(tk.ALL))
 
 	def test(self, controller):
 

@@ -10,21 +10,34 @@ class Enigme6(Page):
 
         Page.__init__(self, parent, controller)
 
+        ## Canva et Scrollbar
+        scrollbar = tk.Scrollbar(self, orient=tk.VERTICAL)
+        scrollbar.grid(row=0, column=1, sticky='ns')
+
+        canva = tk.Canvas(self, yscrollcommand=scrollbar.set, width = controller.W-20, height = controller.H)
+        canva.grid(row=0, column=0, sticky='nswe')
+
+        scrollbar.config(command=canva.yview)
+
+        ## Le Frame, dans le Canvas, mais sans pack ou grid
+        frame = tk.Frame(canva, width = controller.W-20, height = controller.H)
+        frame.pack_propagate(False)
+
         self.liste_réponse = ["surpeche", "machoire", "nageoire", "caudale", "predateur", "indispensable"]
         self.liste_trouvé  = []
         self.liste_disabled = []
 
-        Label1 = tk.Label(self, text = "\nSaurez vous trouver 6 mots en rapport \n avec les requins dans cette grille ?\n",  font= ("Courier",20), fg = '#00d0cb')
+        Label1 = tk.Label(frame, text = "\nSaurez vous trouver 6 mots en rapport \n avec les requins dans cette grille ?\n",  font= ("Courier",20), fg = '#00d0cb')
         Label1.pack()
 
         motsmeles = tk.PhotoImage(file='images/motsmeles.png')
-        Label2 = tk.Label(self, image = motsmeles)
+        Label2 = tk.Label(frame, image = motsmeles)
         Label2.image = motsmeles
         Label2.pack()
-        Label3 = tk.Label(self, text= " ")
+        Label3 = tk.Label(frame, text= " ")
         Label3.pack()
 
-        cadre0=tk.Frame(self)
+        cadre0=tk.Frame(frame)
         cadre0.pack()
         self.Saisie1 = tk.Entry(cadre0, textvariable="mot1",font= ("Courier",10))
         self.Saisie1.pack(side = 'left')
@@ -39,7 +52,7 @@ class Enigme6(Page):
         Label3 = tk.Label(cadre0, text= " ")
         Label3.pack()
 
-        cadre1=tk.Frame(self)
+        cadre1=tk.Frame(frame)
         cadre1.pack()
         self.Saisie4 = tk.Entry(cadre1, textvariable="mot4",font= ("Courier",10))
         self.Saisie4.pack(side = 'left')
@@ -52,12 +65,20 @@ class Enigme6(Page):
         self.Saisie6 = tk.Entry(cadre1, textvariable="mot6",font= ("Courier",10))
         self.Saisie6.pack(side = 'left')
 
-        Label4 = tk.Label(self, text= " ")
+        Label4 = tk.Label(frame, text= " ")
         Label4.pack()
-        Bouton2  = tk.Button(self, text = 'Valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
+        Bouton2  = tk.Button(frame, text = 'Valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
         Bouton2.pack()
 
-        
+        ## MAJ de la frame
+        frame.update() 
+
+        ## Ajout du frame au canva
+        canva.create_window(0, 0, anchor=tk.NW, window=frame)
+
+        ## La scrollregion est la boite englobante pour tout ce qu'il y a dans le Canvas
+        canva.configure(scrollregion=canva.bbox(tk.ALL))
+
         self.liste_saisie = [self.Saisie1, self.Saisie2, self.Saisie3, self.Saisie4, self.Saisie5, self.Saisie6]
 
     def test(self, controller):

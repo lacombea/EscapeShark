@@ -10,27 +10,49 @@ class Enigme1(Page):
 		
 		Page.__init__(self, parent, controller)
 
-		Label1 = tk.Label(self, text = "\nC'est parti ! \n Décodez ceci pour continuer\n",  font= ("Courier",20), fg = '#00d0cb')
+		## Canva et Scrollbar
+		scrollbar = tk.Scrollbar(self, orient=tk.VERTICAL)
+		scrollbar.grid(row=0, column=1, sticky='ns')
+		
+		canva = tk.Canvas(self, yscrollcommand=scrollbar.set, width = controller.W-20, height = controller.H)
+		canva.grid(row=0, column=0, sticky='nswe')
+		
+		scrollbar.config(command=canva.yview)
+
+		## Le Frame, dans le Canvas, mais sans pack ou grid
+		frame = tk.Frame(canva, width = controller.W-20, height = controller.H)
+		frame.pack_propagate(False)
+
+		Label1 = tk.Label(frame, text = "\nC'est parti ! \n Décodez ceci pour continuer\n",  font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
 		code = tk.PhotoImage(file='images/codemorse.png')
-		Label2 = tk.Label(self, image = code)
+		Label2 = tk.Label(frame, image = code)
 		Label2.image = code
 		Label2.pack()
-		Label3 = tk.Label(self, text= " ")
+		Label3 = tk.Label(frame, text= " ")
 		Label3.pack()
 
-		Bouton1  = tk.Button(self, text = 'Alphabet',font= ("Courier",10), command = lambda : self.alphabet(), bg = '#00d0cb', activebackground = '#00d0cb')
+		Bouton1  = tk.Button(frame, text = 'Alphabet',font= ("Courier",10), command = lambda : self.alphabet(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
-		Label4 = tk.Label(self, text= " ")
+		Label4 = tk.Label(frame, text= " ")
 		Label4.pack()
 
-		self.Saisie = tk.Entry(self, textvariable="code",font= ("Courier",10))
+		self.Saisie = tk.Entry(frame, textvariable="code",font= ("Courier",10))
 		self.Saisie.pack()
-		Label5 = tk.Label(self, text= " ")
+		Label5 = tk.Label(frame, text= " ")
 		Label5.pack()
-		Bouton2  = tk.Button(self, text = 'Valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
+		Bouton2  = tk.Button(frame, text = 'Valider',font= ("Courier",10), command = lambda : self.test(controller), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton2.pack()
+
+		## MAJ de la frame
+		frame.update() 
+
+		## Ajout du frame au canva
+		canva.create_window(0, 0, anchor=tk.NW, window=frame)
+
+		## La scrollregion est la boite englobante pour tout ce qu'il y a dans le Canvas
+		canva.configure(scrollregion=canva.bbox(tk.ALL))
 
 
 	def test(self, controller):
@@ -41,7 +63,7 @@ class Enigme1(Page):
 		elif self.Saisie.get() == 'secret':
 			self.destroy_all()
 			self.requin_blanc()
-			controller.show_frame("Enigme4")
+			controller.show_frame("Enigme7")
 		else :
 			self.wrong()
 			self.Saisie.delete(0,40)

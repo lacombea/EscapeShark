@@ -13,6 +13,9 @@ from enigmes.enigme7 import *
 class App(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
+
+        self.H = self.winfo_screenheight()
+        self.W = self.winfo_screenwidth()
         # le conteneur est l'endroit où nous empilerons un tas de cadres
         # les uns sur les autres, puis celui que nous voulons voir
         # sera élevé au-dessus des autres
