@@ -20,7 +20,7 @@ class Enigme5(Page):
 		scrollbar.config(command=canva.yview)
 
 		## Le Frame, dans le Canvas, mais sans pack ou grid
-		frame = tk.Frame(canva, width = controller.W-20, height = controller.H)
+		frame = tk.Frame(canva, width = controller.W-20, height = 550)
 		frame.pack_propagate(False)
 
 		Label1 = tk.Label(frame, text = "\nCes 6 là sont les plus connus, \n mais combien existe-t-il d'espèces au total ?\n", font= ("Courier",20), fg = '#00d0cb')

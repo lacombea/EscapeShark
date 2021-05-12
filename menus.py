@@ -113,7 +113,7 @@ class Menu3(Page):
 		scrollbar.config(command=canva.yview)
 
 		## Le Frame, dans le Canvas, mais sans pack ou grid
-		frame = tk.Frame(canva,  width = controller.W-20, 640)
+		frame = tk.Frame(canva,  width = controller.W-20, height = 640)
 		frame.pack_propagate(False)
 
 		Label1 = tk.Label(frame, text = "\nQu'est ce qu'un projet IHH ?\n", font= ("Courier",20), fg = '#00d0cb')
@@ -156,7 +156,7 @@ class Menu4(Page):
 		scrollbar.config(command=canva.yview)
 
 		## Le Frame, dans le Canvas, mais sans pack ou grid
-		frame = tk.Frame(canva, width = controller.W-20, height = controller.H)
+		frame = tk.Frame(canva, width = controller.W-20, height = 720)
 		frame.pack_propagate(False)
 
 		Label1 = tk.Label(frame, text = "\nMise en contexte\n", font= ("Courier",20), fg = '#00d0cb')
@@ -236,7 +236,7 @@ class MenuFinal(Page):
 		scrollbar.config(command=canva.yview)
 
 		## Le Frame, dans le Canvas, mais sans pack ou grid
-		self.frame = tk.Frame(canva,  width = controller.W-20, height = controller.H)
+		self.frame = tk.Frame(canva,  width = controller.W-20, height = 430)
 		self.frame.pack_propagate(False)
 
 		self.Label1 = tk.Label(self.frame, text = " ")

@@ -20,7 +20,7 @@ class Enigme4(Page):
 		scrollbar.config(command=canva.yview)
 
 		## Le Frame, dans le Canvas, mais sans pack ou grid
-		frame = tk.Frame(canva, width = controller.W-20, height = controller.H)
+		frame = tk.Frame(canva, width = controller.W-20, height = 970)
 		frame.pack_propagate(False)
 
 		Label1 = tk.Label(frame, text = "\nConnaissez-vous ces requins ?", font= ("Courier",20), fg = '#00d0cb')
