@@ -251,7 +251,7 @@ class MenuFinal(Page):
 		self.Label4 = tk.Label(self.frame, text = " ")
 		self.Label4.pack()
 
-		self.Bouton1 = tk.Button(self.frame, text = 'Suspence.....',font= ("Courier",10), command = lambda : self.afficher_score(), bg = '#00d0cb', activebackground = '#00d0cb')
+		self.Bouton1 = tk.Button(self.frame, text = 'Suspens.....',font= ("Courier",10), command = lambda : self.afficher_score(), bg = '#00d0cb', activebackground = '#00d0cb')
 		self.Bouton1.pack()
 
 		self.Label5 = tk.Label(self.frame, text = " ")
