@@ -8,7 +8,7 @@ Les textes noirs sur fond bleu sont des boutons qui te permettront de te guider 
 
 Après chaque énigme, une pop-up d'information s'affichera, prends ton temps pour les lire : ton but est avant tout d'en apprendre plus sur les requins.
 
-Nous serons ravis si tu décides de nous faire un retour sur ta partie ou de nous partager ton score.
+Nous serons ravis si tu décides de nous faire un retour sur ta partie ou de nous partager ton score par mail ou via notre page Instagram.
 
 Amuse-toi bien !!
 
