@@ -23,7 +23,7 @@ class Enigme3(Page):
 		frame = tk.Frame(canva, width = controller.W-20, height = 400)
 		frame.pack_propagate(False)
 
-		Label1 = tk.Label(frame, text = "\nC'est parti ! \n Classez ces espèces par niveau de dangerosité\n", font= ("Courier",20), fg = '#00d0cb')
+		Label1 = tk.Label(frame, text = "\nC'est parti ! \n Classez ces espèces par nombre de morts humaines par an\n", font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
 		cadre0=tk.Frame(frame)
@@ -54,7 +54,7 @@ class Enigme3(Page):
 		self.Saisie5 = tk.Entry(cadre1, textvariable="5",font= ("Courier",10))
 		self.Saisie5.pack(side = 'left')
 		
-		Label2 = tk.Label(frame,font= ("Courier",10), text = "- dangereux <------                 ------> + dangereux\n")
+		Label2 = tk.Label(frame,font= ("Courier",10), text = "- meurtrière <------                 ------> + meurtrière\n")
 		Label2.pack()
 		Label3 = tk.Label(frame, font= ("Courier",10), text = "NB : il faut entrer le nom des animaux dans les différentes cases\n")
 		Label3.pack()
@@ -144,7 +144,7 @@ class Enigme3(Page):
 		Label5.pack()
 		Label6 = tk.Label(self.popup,font= ("Courier",12),fg = 'white',bg = '#717171', wraplength = 1000, text = "En quatrième place, nous avons l'éléphant avec 100 morts par an.")
 		Label6.pack()
-		Label7 = tk.Label(self.popup,font= ("Courier",12),fg = 'white',bg = '#717171', wraplength = 1000, text = "Et la dernière place revient à notre espèce favorite : les requins, avec seulement une dizaine de morts par an.\nCela vous surprend ? Les requins sont énormément diabolisés dans les films et médias, alors que statistiquement ils sont moins dangereux que votre animal de compagnie.\n")
+		Label7 = tk.Label(self.popup,font= ("Courier",12),fg = 'white',bg = '#717171', wraplength = 1000, text = "Et la dernière place revient à notre espèce favorite : les requins, avec seulement une dizaine de morts par an.\nCela vous surprend ? Les requins sont énormément diabolisés dans les films et médias, alors que statistiquement ils sont moins meurtriers que votre animal de compagnie.\n")
 		Label7.pack()
 
 		Bouton1 = tk.Button(self.popup,font= ("Courier",10),bg = '#00d0cb', wraplength = 700, text = 'Suivant', command = lambda : self.popup.destroy(), activebackground = '#00d0cb')

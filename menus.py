@@ -187,8 +187,6 @@ class Menu4(Page):
 		Bouton1.pack()
 		Label8 = tk.Label(frame, font=("Courier",12), wraplength = 700, text = "\n Même si votre temps est compté, le but du jeu est d'en apprendre plus sur les requins: prêtez attention aux différentes informations présentes au cours de votre partie.\n Amusez-vous bien ! \n")
 		Label8.pack()
-		Label9 = tk.Label(frame, text= "\n! En cas de problème n'hésitez pas à appeler Alexia ou Baptiste !", font= ("Courier",18), fg = 'red')
-		Label9.pack()
 
 		## MAJ de la frame
 		frame.update() 
@@ -277,5 +275,5 @@ class MenuFinal(Page):
 		self.Label4.pack()
 		self.Label5 = tk.Label(self.frame, text = "\nNous espérons que vous avez apprécié jouer à notre jeu, et que vous en avez appris plus sur les requins.", font= ("Courier",15))
 		self.Label5.pack()
-		self.Label6 = tk.Label(self.frame, text = "\n! Veuillez appeler Alexia ou Baptiste pour valider votre score !",fg = 'red', font= ("Courier",18))
+		self.Label6 = tk.Label(self.frame, text = "\nNous serons ravis si vous décidez de nous faire un retour sur votre partie ou de nous partager votre score\n via Instagram ou via notre mail.", font= ("Courier",15))
 		self.Label6.pack()
