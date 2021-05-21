@@ -23,10 +23,12 @@ class Enigme6(Page):
         frame = tk.Frame(canva, width = controller.W-20, height = 950)
         frame.pack_propagate(False)
 
+        #création du dictionnaire utile à la vérification
         self.liste_réponse = ["surpeche", "machoire", "nageoire", "caudale", "predateur", "indispensable"]
         self.liste_trouvé  = []
         self.liste_disabled = []
 
+	    #ajout des widgets
         Label1 = tk.Label(frame, text = "\nSaurez vous trouver 6 mots en rapport \n avec les requins dans cette grille ?\n",  font= ("Courier",20), fg = '#00d0cb')
         Label1.pack()
 
@@ -81,19 +83,25 @@ class Enigme6(Page):
 
         self.liste_saisie = [self.Saisie1, self.Saisie2, self.Saisie3, self.Saisie4, self.Saisie5, self.Saisie6]
 
+	#test des réponses
     def test(self, controller):
+        #on parcourt les saisies
         for i in range(len(self.liste_saisie)) :
+            #on parcourt la liste des réponses pour tester si la saisie contient une bonne réponse
             for j in range(len(self.liste_réponse)):
                 if self.liste_saisie[i].get() == self.liste_réponse[j] :
+                    #on vérifie si la réponse n'a pas déjà été trouvée
                     if not (self.liste_réponse[j] in self.liste_trouvé):
-                        self.liste_trouvé.append(self.liste_réponse[j])
-                        self.liste_disabled.append(self.liste_saisie[i])
-                        self.liste_saisie[i].configure(state = 'disabled')
+                        self.liste_trouvé.append(self.liste_réponse[j]) #la réponse passe dans la liste des réponses trouvées
+                        self.liste_disabled.append(self.liste_saisie[i]) #la saisie passe dans la liste des saisie figées (disabled)
+                        self.liste_saisie[i].configure(state = 'disabled') #on rend la saisie figée (disabled)
 
         for i in range(len(self.liste_saisie)) :
             if not (self.liste_saisie[i] in self.liste_disabled) :
+                #si une saisie ne contient pas une des 6 réponses, on la supprime si elle n'est pas figée (disabled)
                 self.liste_saisie[i].delete(0,40)
 
+        #une fois que toutes les bonnes réponses ont été trouvées, on passe à l'énigme suivante
         if len(self.liste_trouvé) == 6:
             self.destroy_all()
             self.surpeche()
@@ -101,6 +109,7 @@ class Enigme6(Page):
         else :
             self.wrong()
 
+	#affichage de la pop-up indiquant une mauvaise réponse
     def wrong(self):
         self.destroy_all()
 
@@ -114,6 +123,7 @@ class Enigme6(Page):
         Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
         Bouton1.pack()
 
+	#affichage de la pop-up d'information
     def surpeche(self):
         self.popup = tk.Toplevel(self)
         Page.list_of_tops.append(self.popup)

@@ -23,6 +23,7 @@ class Enigme7(Page):
 		frame = tk.Frame(canva, width = controller.W-20, height = 500)
 		frame.pack_propagate(False)
 
+		#ajout des widgets
 		Label1 = tk.Label(frame, text = "\nComme dit précédemment le requin a une énorme machoire ! \n Mais combien de dents peut-il perdre au cours de sa vie ?\n",  font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
@@ -57,6 +58,7 @@ class Enigme7(Page):
 		## La scrollregion est la boite englobante pour tout ce qu'il y a dans le Canvas
 		canva.configure(scrollregion=canva.bbox(tk.ALL))
 
+	#test de la réponse
 	def test(self, controller):
 		if self.Saisie.get() == 'trente mille':
 			self.destroy_all()
@@ -66,6 +68,7 @@ class Enigme7(Page):
 			self.wrong()
 			self.Saisie.delete(0,40)      
 
+	#affichage de la pop-up 
 	def alphabet(self):
 		self.popup = tk.Toplevel(self)
 		Page.list_of_tops.append(self.popup)
@@ -79,6 +82,7 @@ class Enigme7(Page):
 		Bouton1 = tk.Button(self.popup, text = 'Fermer',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
+	#affichage de la pop-up indiquant une mauvaise réponse
 	def wrong(self):
 		self.destroy_all()
 		
@@ -92,6 +96,7 @@ class Enigme7(Page):
 		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
+	#affichage de la pop-up d'information
 	def dents(self):
 		self.popup = tk.Toplevel(self)
 		Page.list_of_tops.append(self.popup)

@@ -1,7 +1,7 @@
 #############################################################################
 # Fichier pour créer un .exe
 
-#!/usr/bin/python
+#!/usr/bin/python 
 # -*- coding: utf-8 -*-
 # Python 2.7
  

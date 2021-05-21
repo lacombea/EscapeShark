@@ -23,6 +23,7 @@ class Enigme5(Page):
 		frame = tk.Frame(canva, width = controller.W-20, height = 550)
 		frame.pack_propagate(False)
 
+		#ajout des widgets
 		Label1 = tk.Label(frame, text = "\nCes 6 là sont les plus connus, \n mais combien existe-t-il d'espèces au total ?\n", font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
@@ -55,6 +56,7 @@ class Enigme5(Page):
 		## La scrollregion est la boite englobante pour tout ce qu'il y a dans le Canvas
 		canva.configure(scrollregion=canva.bbox(tk.ALL))
 
+	#affichage de la pop-up 
 	def table(self):
 		self.popup = tk.Toplevel(self)
 		Page.list_of_tops.append(self.popup)
@@ -68,6 +70,7 @@ class Enigme5(Page):
 		Bouton1 = tk.Button(self.popup, text = 'Fermer',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
+	#test de la bonne réponse
 	def test(self, controller):
 		if self.Saisie.get() == '529 especes':
 			self.destroy_all()
@@ -77,6 +80,7 @@ class Enigme5(Page):
 			self.wrong()
 			self.Saisie.delete(0,40)
 
+	#affichage de la pop-up indiquant une mauvaise réponse
 	def wrong(self):
 		self.destroy_all()
 		
@@ -90,6 +94,7 @@ class Enigme5(Page):
 		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
+	#affichage de la pop-up d'information
 	def especes(self):
 		self.popup = tk.Toplevel(self)
 		Page.list_of_tops.append(self.popup)
