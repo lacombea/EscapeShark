@@ -56,14 +56,14 @@ class Enigme1(Page):
 
 
 	def test(self, controller):
-		if self.Saisie.get() == 'requin blanc':
+		if self.Saisie.get() == 'REQUIN BLANC':
 			self.destroy_all()
 			self.requin_blanc()
-			controller.show_frame("Enigme3")
-		elif self.Saisie.get() == 'secret':
-			self.destroy_all()
-			self.requin_blanc()
-			controller.show_frame("Enigme7")
+			controller.show_frame("Enigme2")
+		#elif self.Saisie.get() == 'secret':
+		#	self.destroy_all()
+		#	self.requin_blanc()
+		#	controller.show_frame("Enigme7")
 		else :
 			self.wrong()
 			self.Saisie.delete(0,40)

@@ -97,7 +97,7 @@ class Enigme6(Page):
         if len(self.liste_trouvé) == 6:
             self.destroy_all()
             self.surpeche()
-            controller.show_frame("MenuFinal")
+            controller.show_frame("Enigme7")
         else :
             self.wrong()
 

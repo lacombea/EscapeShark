@@ -33,11 +33,6 @@ packages = ["idna","os","sys","enigmes"]
 
 # copier les fichiers non-py et non-pyw et/ou repertoires et leur contenu:
 includefiles = ["images"]
-                #["images/logo.png","images/529requins.png","images/affiche1.png","images/affiche2.png","images/affiche3.png","images/affiche4.png","images/affiche5.png",
-                #"images/alexia.png","images/alphacrypte.png","images/alphamorse.png","images/baptiste.png","images/codebinaire.png","images/codecrypte.png","images/codemorse.png",
-                #"images/danger.png","images/dents.png","images/especesrequin.png","images/logo.png","images/motsmeles.png","images/réponsemotsmeles.png","images/requinbaleine.png",
-                #"images/requinblanc.png","images/requinblanc2.png","images/requinmarteau.png","images/requinrenard.png","images/requintigre.png","images/roussette.png",
-                #"images/squale.png","images/surpeche.png","images/tablebinaire.png"]
 
 # inclure si nécessaire les fichiers non-py et non-pyw dans library.zip
 #zipincludes = []
