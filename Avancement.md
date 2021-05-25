@@ -5,6 +5,11 @@ Jusqu'à présent, nous n'avions que deux énigmes à notre jeu: nous en avons d
 
 *exemple: pour notre première énigme, la réponse est "requin blanc" : lorsque la bonne réponse est entrée, une pop-up d'informationssur cette espèce apparait.*
 
-**23/04/2021 :** ajout de deux énigmes, séparation des fichiers en plusieurs dossiers
+**23/04/2021 :** Peendant cette séance, nous avons ajouté deux nouvelles énigmes à notre jeu. Nous avons également séparé nos fichiers en plusieurs dossiers *(par exemple le code dans le fichier "code", les images dans le fichier "images)* afin que notre projet soit plus organisé.
 
-**21/05/2021 :** annotations du code, mise en place de l'exécutable
+**21/05/2021 :** Nous avons beaucoup travaillé durant les vacances sur notre code, afin d'obtenir une première version jouable de notre jeu qui puisse être testée par de vrais joueurs. Suite à la réalisation de tests sur quelques joueurs, nous avons apporté les modifications nécassaires à notre code, afin de rednre le jeu plus facile de compréhension.
+Durant cette séance, nous avons annoté du code afin de le rendre le plus clair possible. Nous avons également mis en place une version exécutable de notre jeu, afin que chaque joueur puisse pouvoir télécharger le jeu et y jouer sur son ordindateur personnel.
+
+**28/05/2021 :**
+
+**01/06/2021 :** Oral de présentation du jeu Escape Shark
