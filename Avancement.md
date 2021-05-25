@@ -12,4 +12,4 @@ Durant cette séance, nous avons annoté du code afin de le rendre le plus clair
 
 **28/05/2021 :**
 
-**01/06/2021 :** Oral de présentation du jeu Escape Shark
+**01/06/2021 : Oral de présentation du jeu Escape Shark**
