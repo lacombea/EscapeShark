@@ -54,7 +54,7 @@ class Enigme1(Page):
 		## La scrollregion est la boite englobante pour tout ce qu'il y a dans le Canvas
 		canva.configure(scrollregion=canva.bbox(tk.ALL))
 
-
+	
 	def test(self, controller):
 		if self.Saisie.get() == 'REQUIN BLANC':
 			self.destroy_all()
