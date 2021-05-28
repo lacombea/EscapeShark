@@ -10,6 +10,6 @@ Jusqu'à présent, nous n'avions que deux énigmes à notre jeu: nous en avons d
 **21/05/2021 :** Nous avons beaucoup travaillé durant les vacances sur notre code, afin d'obtenir une première version jouable de notre jeu qui puisse être testée par de vrais joueurs. Suite à la réalisation de tests sur quelques joueurs, nous avons apporté les modifications nécessaires à notre code, afin de rendre le jeu plus facile de compréhension.
 Durant cette séance, nous avons annoté notre code afin de le rendre le plus clair possible. Nous avons également mis en place une version exécutable de notre jeu, afin que chaque joueur puisse pouvoir télécharger le jeu et y jouer sur son ordindateur personnel.
 
-**28/05/2021 :**
+**28/05/2021 :** Lors de cette avant-dernière séance, nous avons préparé les différents documents demandés lors du rendu du projet de CPO, ainsi que notre présentation orale pour mardi prochain.
 
 **01/06/2021 : Oral de présentation du jeu Escape Shark**
