@@ -23,6 +23,7 @@ class Enigme3(Page):
 		frame = tk.Frame(canva, width = controller.W-20, height = 400)
 		frame.pack_propagate(False)
 
+		#ajout des widgets
 		Label1 = tk.Label(frame, text = "\nC'est parti ! \n Classez ces espèces par nombre de morts humaines par an\n", font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
@@ -70,8 +71,10 @@ class Enigme3(Page):
 		## La scrollregion est la boite englobante pour tout ce qu'il y a dans le Canvas
 		canva.configure(scrollregion=canva.bbox(tk.ALL))
 
+	#test des bonnes réponses
 	def test(self, controller):
 
+		#pour chaque saisie, si la réponse est bonne on la fige (disabled), sinon on efface la saisie actuelle
 		if self.Saisie1.get() == 'requin':
 			self.Saisie1.configure(state = 'disabled')	
 		else :
@@ -110,6 +113,7 @@ class Enigme3(Page):
 			self.wrong()
 			self.Saisie1.delete(0,40)
 
+	#affichage de la pop-up indiquant une mauvaise réponse
 	def wrong(self):
 		self.destroy_all()
 		
@@ -123,6 +127,7 @@ class Enigme3(Page):
 		Bouton1 = tk.Button(self.popup, text = 'Retour à la saisie',font= ("Courier",10), command = lambda : self.popup.destroy(), bg = '#00d0cb', activebackground = '#00d0cb')
 		Bouton1.pack()
 
+	#affichage de la pop-up d'information
 	def danger(self):
 		self.popup = tk.Toplevel(self)
 		Page.list_of_tops.append(self.popup)

@@ -23,6 +23,7 @@ class Menu1(Page):
 		frame = tk.Frame(canva, width = controller.W-20, height = 800)
 		frame.pack_propagate(False)
 
+		#ajout des widgets
 		Label1 = tk.Label(frame, text = '\nBienvenue dans Escape Shark !',font=("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 		logo = tk.PhotoImage(file='images/logo.png')
@@ -66,6 +67,7 @@ class Menu2(Page):
 		frame = tk.Frame(canva,  width = controller.W-20, height = controller.H)
 		frame.pack_propagate(False)
 
+		#ajout des widgets
 		Label1 = tk.Label(frame, text = '\nQui sommes nous ?\n', font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
@@ -116,6 +118,7 @@ class Menu3(Page):
 		frame = tk.Frame(canva,  width = controller.W-20, height = 640)
 		frame.pack_propagate(False)
 
+		#ajout des widgets
 		Label1 = tk.Label(frame, text = "\nQu'est ce qu'un projet IHH ?\n", font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
@@ -159,6 +162,7 @@ class Menu4(Page):
 		frame = tk.Frame(canva, width = controller.W-20, height = 720)
 		frame.pack_propagate(False)
 
+		#ajout des widgets
 		Label1 = tk.Label(frame, text = "\nMise en contexte\n", font= ("Courier",20), fg = '#00d0cb')
 		Label1.pack()
 
@@ -198,6 +202,7 @@ class Menu4(Page):
 		canva.configure(scrollregion=canva.bbox(tk.ALL))
 
 	def debut_jeu(self, controller):
+		#vérification des champs nom et prénom 
 		if (self.Saisie5.get() == '' or self.Saisie6.get() == ''):
 			self.destroy_all()
 		
@@ -212,8 +217,10 @@ class Menu4(Page):
 			Bouton1.pack()
 		else : 
 			self.destroy_all()
+			#enregistrement des nom et prénom dans la classe Joueur
 			joueur.prénom = self.Saisie5.get()
 			joueur.nom = self.Saisie6.get()
+			#démarrage du timer
 			Timer.__init__(a.App)
 			controller.show_frame("Enigme1")
 
@@ -237,6 +244,7 @@ class MenuFinal(Page):
 		self.frame = tk.Frame(canva,  width = controller.W-20, height = 430)
 		self.frame.pack_propagate(False)
 
+		#ajout des widgets
 		self.Label1 = tk.Label(self.frame, text = " ")
 		self.Label1.pack()
 
@@ -266,6 +274,7 @@ class MenuFinal(Page):
 
 	def afficher_score(self):
 		self.destroy_all()
+		#calcul du temps de la partie
 		Timer.time = Timer.get_time(a.App)
 		self.Bouton1.destroy()
 		self.Label1.configure(text="\nFélicitations "+ joueur.prénom + " " + joueur.nom + " !!!", font= ("Courier",20), fg = '#00d0cb') 
